@@ -1,0 +1,113 @@
+# 真题高频但原词库漏收的词
+#
+# 来源：output/未收录高频词.txt 里出现 ≥3 次的词，排除功能词（the/and/that）、
+# 题干套话（mainly/passage/exams/directions）和人名（skillman/ventura）之后剩下的实词。
+# 屈折形式统一折回原形收录（designers→designer、built→build），
+# 词形由 core/lexicon.py 的规则自动还原，不需要为每个变形单独建条。
+#
+# 为什么单独成一册：这些词大多是最基础的高频词，而原分册 01-05 收的是"稍难的核心词"，
+# 反而把 eat / sell / pay / talk / save 这类真正常出现的基础词漏掉了。
+# 格式同上：单词|词性|义项(分号分隔，带*者为常考义)|等级(A基础/B核心/C进阶)|搭配提示
+
+## ---- 基础动词（真题里反复出现，搭配是 370 分档的主要卡点）----
+open|v./adj.|*打开,张开;开业,开张;开着的,公开的|A|open the door 开门；open to 对…开放
+close|v./adj.|*关闭,关上;近的,亲密的|A|close down 停业；be close to 靠近
+save|v.|*节省,节约;拯救,挽救;保存|A|save money 省钱；save one's life 救某人的命
+build|v.|*建造,修建;建立,培养|A|build up 逐步建立；build a house 盖房子
+create|v.|*创造,创建;引起,产生|A|create jobs 创造就业
+eat|v.|*吃,吃饭|A|eat out 在外面吃；eat up 吃光
+grow|v.|*生长,成长;增长,扩大;种植|A|grow up 长大；grow into 长成
+rise|v./n.|*上升,升高;增加,增长;起身|A|give rise to 引起；rise by 增长了…
+sell|v.|*卖,出售;卖出|A|sell out 卖光；sell at 以…价格卖
+move|v./n.|*移动,搬动;搬家;行动|A|move to 搬到…；move on 继续前进
+pay|v./n.|*支付,付钱;工资,薪水|A|pay for 为…付款；pay attention to 注意
+serve|v.|*为…服务,招待;供应（饭菜）;起作用|A|serve as 充当,用作
+speak|v.|*说,讲（某种语言）;讲话,发言|A|speak of 谈到；generally speaking 一般来说
+talk|v./n.|*谈话,交谈;讲话,演讲|A|talk about 谈论；talk with 和…交谈
+stay|v./n.|*停留,待（在某处）;保持（某种状态）|A|stay up 熬夜；stay in touch 保持联系
+stop|v./n.|*停止,停下;车站|A|stop doing 停止做…；stop to do 停下来去做…
+type|n./v.|*类型,种类;打字|A|type of 某种…；blood type 血型
+check|v./n.|*检查,核对;支票|A|check in 登记入住；check out 结账离开
+gain|v./n.|*获得,得到;增加;好处,收益|A|gain experience 获得经验；gain weight 增重
+plan|n./v.|*计划,打算;平面图|A|plan to do 打算做…；make a plan 制定计划
+disappear|v.|*消失,不见;灭绝|A|disappear from 从…消失
+train|n./v.|*火车;训练,培训|A|by train 乘火车；train sb to do 训练某人做…
+abolish|v.|*废除,废止（法律、制度等）|B|abolish the death penalty 废除死刑
+
+## ---- 基础名词 ----
+idea|n.|*想法,主意;概念|A|have no idea 不知道；a good idea 好主意
+task|n.|*任务,工作|A|complete a task 完成任务；daily tasks 日常事务
+office|n.|*办公室;办事处;政府机关|A|in the office 在办公室；post office 邮局
+class|n.|*班级;课,课程;阶级|A|in class 在课堂上；have a class 上课
+line|n.|*线,线条;队伍;线路|A|wait in line 排队；on line 在线
+team|n.|*队,团队|A|team work 团队合作；a team of 一队…
+power|n.|*力量,能力;权力;电力|A|power supply 供电；come to power 上台执政
+store|n./v.|*商店;储存,储备|A|convenience store 便利店；store up 储存起来
+sign|n./v.|*迹象,征兆;标志,招牌;签名|A|sign of …的迹象；sign up 报名
+milk|n.|*牛奶,奶|A|drink milk 喝牛奶
+animal|n.|*动物,兽|A|wild animals 野生动物
+bus|n.|*公共汽车,巴士|A|by bus 乘公交；bus stop 公交站
+bicycle|n.|*自行车|A|ride a bicycle 骑自行车
+restaurant|n.|*餐馆,饭店|A|go to a restaurant 去餐馆吃饭
+supermarket|n.|*超级市场|A|go to the supermarket 去超市
+grammar|n.|*语法,文法|A|grammar rules 语法规则
+grade|n./v.|*年级;分数,等级;给…评分|A|get good grades 取得好成绩
+difficulty|n.|*困难,难事|A|have difficulty (in) doing 做…有困难
+handwriting|n.|*笔迹,书法;手写|A|poor handwriting 字迹潦草
+centre|n.|*中心,中央;（活动）中心|A|in the centre of 在…的中心
+speed|n./v.|*速度;加速|A|at a speed of 以…的速度；speed up 加速
+source|n.|*来源,出处;源头|A|source of income 收入来源
+opinion|n.|*意见,看法,主张|A|in one's opinion 在某人看来；public opinion 舆论
+rider|n.|*骑手,骑马（或自行车）的人;乘客|A|bicycle rider 骑车人
+author|n.|*作者,著者;创始人|A|the author of …的作者
+couple|n.|*一对,一双;几个,两三个|A|a couple of 几个
+jam|n.|*堵塞,拥挤;果酱|A|traffic jam 交通堵塞
+housing|n.|*住房,住宅;住房供给|B|housing prices 房价
+grid|n.|*网格,格栅;电网,输电网|B|power grid 电网
+character|n.|*性格,品质;人物,角色;文字,字符|B|in character 符合性格；Chinese characters 汉字
+
+## ---- 基础形容词 / 副词 / 介词 ----
+cheap|adj.|*便宜的,廉价的;劣质的|A|cheaper than 比…便宜
+expensive|adj.|*昂贵的,花钱多的|A|expensive to do 做…很贵
+electric|adj.|*电动的;用电的,电的|A|electric car 电动汽车；electric power 电力
+safe|adj./n.|*安全的,平安的;保险箱|A|safe and sound 安然无恙；keep safe 保持安全
+old|adj.|*老的,年老的;旧的,古老的|A|older than 比…年长；old age 老年
+national|adj.|*国家的,全国的;民族的|A|national holiday 国定假日
+second-hand|adj./adv.|*二手的,用过的;间接地|A|second-hand books 二手书
+face-to-face|adj./adv.|*面对面的,当面的|B|face-to-face talk 面对面的交谈
+continuous|adj.|*连续的,持续的|B|continuous improvement 持续改进
+irregular|adj.|*不规则的;不规律的,不稳定的|B|irregular hours 不固定的时间
+harmless|adj.|*无害的,不会造成伤害的|B|be harmless to 对…无害
+predictable|adj.|*可预测的,可预料的|B|highly predictable 很容易预测
+professional|adj./n.|*专业的,职业的;专业人员|B|professional skills 专业技能
+steadily|adv.|*稳定地,持续地|B|grow steadily 稳步增长
+completely|adv.|*完全地,彻底地|A|completely different 完全不同
+towards|prep.|*朝,向;对于,关于;接近|A|move towards 朝…移动
+against|prep.|*反对,违背;靠着,倚着;与…竞争|A|be against 反对；against the wall 靠墙
+
+## ---- 社会 / 学习 / 医疗类话题词 ----
+communication|n.|*交流,沟通;通讯|B|communication skills 沟通技巧；means of communication 通讯手段
+employment|n.|*就业,工作;雇用|B|employment rate 就业率；find employment 找到工作
+argument|n.|*论点,论据;争论,争吵|B|put forward an argument 提出论点
+contact|n./v.|*联系,联络;接触|B|contact sb 联系某人；keep in contact with 与…保持联系
+delivery|n.|*递送,交付;送货|B|free delivery 免费送货；delivery service 配送服务
+designer|n.|*设计师,设计者|B|fashion designer 时装设计师
+experiment|n./v.|*实验,试验;做实验|B|do an experiment 做实验；experiment on 用…做实验
+interest|n./v.|*兴趣,爱好;利息;利益,好处|B|be interested in 对…感兴趣；interest rate 利率
+learner|n.|*学习者,初学者|B|slow learner 学得慢的人
+performance|n.|*表现,业绩;性能;演出|B|academic performance 学业表现
+efficiency|n.|*效率,效能|B|improve efficiency 提高效率
+emotion|n.|*情绪,情感|B|strong emotions 强烈的情绪
+concentration|n.|*专注,专心;集中;浓度|B|concentration on 专注于…
+distraction|n.|*分心的事物;注意力分散|B|without distraction 不受干扰
+discount|n./v.|*折扣;打折,减价|B|at a discount 打折；discount price 折扣价
+consumer|n.|*消费者,顾客|B|consumer demand 消费需求
+application|n.|*申请,申请书;应用,运用|B|application form 申请表；practical application 实际应用
+admission|n.|*录取,接纳;承认;入场费|B|admission to 获准进入
+educator|n.|*教育工作者,教育家|B|
+procrastination|n.|*拖延,耽搁|C|avoid procrastination 避免拖延
+rumour|n.|*谣言,传闻,说法|C|rumour has it that 据传…
+depression|n.|*抑郁,沮丧;萧条,不景气|C|suffer from depression 患抑郁症
+dementia|n.|*痴呆,失智症|C|suffer from dementia 患痴呆症
+pandemic|n./adj.|*大流行病;（疾病）大规模流行的|C|during the pandemic 在疫情期间
+telemedicine|n.|*远程医疗|C|telemedicine service 远程医疗服务

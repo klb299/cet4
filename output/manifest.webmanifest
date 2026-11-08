@@ -1,0 +1,19 @@
+{
+  "name": "CET-4 真题词汇本",
+  "short_name": "四级词汇",
+  "description": "结合真题原句背单词：词卡、拼写、听写、精读与做题",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f6f8",
+  "theme_color": "#2563eb",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

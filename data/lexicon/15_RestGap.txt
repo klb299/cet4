@@ -1,0 +1,343 @@
+# 真题高频但词库仍缺的词（第三批，正文出现 >=1 次）
+#
+# 前两批见 13_BasicGap.txt（>=3 次）和 14_MoreGap.txt（>=2 次）。
+# 这一批门槛放到 1 次，所以入册标准收紧了：只收「四级考试真可能考、
+# 而原词库从头到尾没收过」的词。下面这些词都被排除在外：
+#   · 专有名词与技术词：alzheimer / confucius / chatgpt / algorithm /
+#     cardiovascular / acupuncture / papermaking / zongzi
+#   · 明显超纲或生僻的派生词：biodegradable / calligraphers / superv(...)
+#   · 初中就已经会、做卡片没有学习价值的词 —— 那部分进了
+#     data/stopwords.txt 的第 4 类，不再占未收录清单的位置
+#
+# 屈折形式统一折回原形收录（decisions->decision、eaten->eat、born->bear），
+# 词形由 core/lexicon.py 的规则与 IRREGULAR_PAIRS 自动还原。
+# 格式：单词|词性|义项(分号分隔，带*者为常考义)|等级(A基础/B核心/C进阶)|搭配提示
+
+## ---- 动词 ----
+act|v./n.|*行动,做事;表演;起作用;法案|A|act as 充当；act on 按照…行事
+advise|v.|*劝告,建议;通知|A|advise sb to do 建议某人做；advise against 劝阻
+allocate|v.|*分配,分派;拨给|B|allocate sth to 把…分配给
+assemble|v.|*集合,聚集;装配,组装|B|assemble the parts 组装零件
+bear|v./n.|*忍受,容忍;承担;生育;熊|B|bear in mind 记住；can't bear doing 受不了做
+beat|v./n.|*打,敲;打败,胜过;心跳|A|beat sb at sth 在…上击败某人
+behave|v.|*表现,举止;（机器）运转|A|behave oneself 守规矩
+block|v./n.|*阻挡,堵塞;街区;块,大块|A|block off 封锁；a block of 一块
+burn|v.|*燃烧,烧毁;晒伤;有强烈的情感|A|burn down 烧成平地；burn out 精疲力竭
+cheat|v./n.|*欺骗,作弊;骗子|B|cheat on 在…上作弊；cheat sb out of 骗走
+collect|v.|*收集,采集;领取;募捐|A|collect stamps 集邮；collect one's thoughts 定神
+compose|v.|*组成,构成;创作（乐曲/文章）;使平静|B|be composed of 由…组成
+decide|v.|*决定,下决心;裁决|A|decide on 决定要；decide against 决定不做
+delete|v.|*删除,删去|A|delete from 从…中删掉
+destroy|v.|*摧毁,毁坏;消灭|A|destroy the evidence 销毁证据
+disturb|v.|*打扰,妨碍;使不安|A|disturb the peace 扰乱安宁
+drown|v.|*淹死,淹没;（声音）压过|B|drown out 淹没（声音）
+ease|v./n.|*减轻,缓解;安逸,舒适|B|ease the pain 减轻痛苦；at ease 自在
+enforce|v.|*强制执行;实施,执行|B|enforce the law 执法
+escape|v./n.|*逃跑,逃脱;避开;泄漏|A|escape from 从…逃出；narrow escape 死里逃生
+excel|v.|*擅长,优于;突出|B|excel at/in 在…方面出色
+forgive|v.|*原谅,饶恕;免除（债务）|B|forgive sb for doing 原谅某人做
+gather|v.|*聚集,集合;采集;推测|A|gather around 围拢；gather that 推测出
+hesitate|v.|*犹豫,踌躇|A|hesitate to do 犹豫着不愿做
+join|v.|*加入,参加;连接,接合|A|join in 参加（活动）；join up 连接起来
+lock|v./n.|*锁上,锁住;锁|A|lock up 锁好；lock out 把…关在外面
+miss|v./n.|*错过,未赶上;想念;遗漏;小姐|A|miss out on 错失；miss the point 没抓住要点
+mix|v.|*混合,掺和;交往|A|mix up 弄混；mix with 与…交往
+punish|v.|*惩罚,处罚|A|punish sb for 因…惩罚某人
+push|v./n.|*推,推动;逼迫;推销|A|push for 力促；push ahead 推进
+realise|v.|*认识到,意识到;实现|B|realise that 意识到；realise a dream 实现梦想
+recognise|v.|*认出,识别;承认,认可|A|recognise as 承认为
+record|v./n.|*记录,记载;录音;记录,唱片;纪录|A|break the record 打破纪录
+refrain|v.|*克制,忍住|B|refrain from doing 忍住不做
+rid|v.|*使摆脱,去掉|B|get rid of 摆脱,除去
+ruin|v./n.|*毁坏,毁灭;废墟,遗迹|B|in ruins 成为废墟
+rush|v./n.|*冲,奔;仓促行事;抢购;高峰期|A|rush hour 高峰时间；rush into 仓促做
+scroll|v./n.|*滚动（屏幕）;卷轴|A|scroll down 向下滚
+suffer|v.|*遭受,忍受;受苦|A|suffer from 患（病）、受…之苦
+surprise|v./n.|*使吃惊;突袭;惊奇|A|by surprise 出其不意；to one's surprise 令某人惊讶
+tell|v.|*告诉,讲述;辨别,看出|A|tell apart 区分开；tell from 从…看出
+test|v./n.|*测试,测验;检验|A|put to the test 使受检验
+turn|v./n.|*转动,转向;变成;轮流|A|turn out 结果是；in turn 依次
+weaken|v.|*削弱,减弱;变弱|B|weaken the effect 削弱效果
+wish|v./n.|*希望,想要;祝愿;愿望|A|wish for 盼望；best wishes 祝好
+wonder|v./n.|*想知道,琢磨;惊奇,奇迹|A|wonder at 对…感到惊奇；no wonder 难怪
+cure|v./n.|*治愈,治好;疗法,对策|A|cure sb of 治好某人的（病）
+die|v.|*死,死亡;消失;渴望|A|die out 灭绝；be dying to 渴望做
+divide|v.|*分开,划分;除;使分歧|A|divide into 分成；divide by 除以
+drop|v./n.|*落下,掉下;降低;放弃;一滴|A|drop out 退出；drop by 顺便拜访
+fit|v./adj.|*合身,适合;安装;健康的;合适的|A|be fit for 适合于；fit in 适应
+drop in|v.|*顺便拜访,顺道看看|A|drop in on sb 顺便看看某人
+
+## ---- 名词 ----
+accommodation|n.|*住处,膳宿;适应,和解|B|find accommodation 找住处
+achievement|n.|*成就,成绩;完成,实现|A|a sense of achievement 成就感
+addition|n.|*增加,加法;增加的人或物|A|in addition 另外
+adjustment|n.|*调整,调节;适应|B|make adjustments 作调整
+adviser|n.|*顾问,指导教师|B|financial adviser 理财顾问
+affection|n.|*喜爱,感情|B|have affection for 喜爱
+applicant|n.|*申请人,应征者|B|applicant for 申请…的人
+appointment|n.|*约会,预约;任命,委派|A|make an appointment 预约
+article|n.|*文章,论文;物品;条款|A|an article of 一件
+assignment|n.|*任务,作业;分配|B|hand in the assignment 交作业
+atmosphere|n.|*大气,空气;气氛,氛围|A|a friendly atmosphere 友好的气氛
+attendance|n.|*出席,到场;出勤;出席人数|B|attendance rate 出勤率
+authority|n.|*权威,权力;当局,官方;权威人士|A|local authorities 地方当局
+autonomy|n.|*自治,自主权|B|gain autonomy 获得自治
+average|n./adj.|*平均,平均数;平均的,一般的|A|on average 平均起来
+bond|n./v.|*纽带,联系;债券;结合|B|bond with 与…建立感情
+boundary|n.|*边界,分界线;界限|B|boundary between …之间的界线
+bridge|n./v.|*桥,桥梁;桥牌;架桥|A|bridge the gap 弥合差距
+buyer|n.|*买主,买方;采购员|A|buyer's market 买方市场
+calculation|n.|*计算,推算;估计|A|make a calculation 作计算
+calendar|n.|*日历,日程表|A|lunar calendar 农历
+certificate|n.|*证书,证明书|A|a birth certificate 出生证明
+chance|n./adj.|*机会,可能性;偶然;偶然的|A|by chance 碰巧；take a chance 冒险
+citizen|n.|*公民,市民;居民|A|a senior citizen 老年人
+competition|n.|*竞争;比赛,竞赛|A|in competition with 与…竞争
+competitor|n.|*竞争者,对手|A|main competitor 主要竞争对手
+complaint|n.|*抱怨,投诉;疾病|A|make a complaint 投诉
+computer|n.|*计算机,电脑|A|computer science 计算机科学
+considerable|adj.|*相当大（多）的,值得考虑的|B|a considerable amount 相当多的量
+consultation|n.|*咨询,商议;会诊|B|in consultation with 与…商量
+contribution|n.|*贡献,捐献;投稿|A|make a contribution to 对…作贡献
+conversation|n.|*交谈,会话|A|make conversation 找话聊
+correction|n.|*改正,纠正;修改处|A|make a correction 作改正
+corridor|n.|*走廊,通道;地带|B|corridor of 通往…的走廊
+council|n.|*委员会,理事会;地方议会|B|city council 市议会
+courage|n.|*勇气,胆量|A|have the courage to do 有勇气做
+courtesy|n.|*礼貌,客气;好意|B|by courtesy of 承蒙…提供
+creativity|n.|*创造力,创造性|B|show creativity 展现创造力
+crisis|n.|*危机,危急关头;决定性时刻|B|in crisis 处于危机中
+disadvantage|n.|*不利条件,劣势;损害|A|at a disadvantage 处于不利地位
+dish|n.|*盘,碟;菜肴,一道菜|A|do the dishes 洗餐具
+document|n./v.|*文件,公文;记录,证明|A|official document 官方文件
+dormitory|n.|*宿舍|A|dormitory life 宿舍生活
+dozen|n.|*一打,十二个;许多|A|dozens of 几十个
+drawback|n.|*缺点,障碍;退款|B|the main drawback 主要缺点
+economy|n.|*经济;节约,节省|A|economy class 经济舱
+edge|n./v.|*边缘,边;优势;徐徐移动|A|on the edge of 在…边缘
+election|n.|*选举,推选;当选|B|stand for election 参加竞选
+envelope|n.|*信封;外壳,封套|A|open the envelope 拆开信封
+equipment|n.|*设备,器材;配备|A|office equipment 办公设备
+essence|n.|*本质,实质;精华;香水|B|in essence 本质上
+etiquette|n.|*礼仪,礼节|B|social etiquette 社交礼仪
+expansion|n.|*扩大,扩张;膨胀|B|expansion of …的扩张
+extent|n.|*程度,范围;长度|B|to some extent 在某种程度上
+fault|n./v.|*缺点,毛病;错误;故障;找茬|A|find fault with 挑剔
+favour|n./v.|*恩惠,帮助;赞成,偏爱|A|in favour of 赞成；do sb a favour 帮某人忙
+fear|n./v.|*害怕,恐惧;担忧|A|for fear of 生怕
+fibre|n.|*纤维;质地;品格|B|fibre optics 光纤
+formula|n.|*公式,方程式;配方;准则|B|formula for …的公式
+frequency|n.|*频率,次数;频繁|B|frequency of …的频率
+friendship|n.|*友谊,友好|A|form a friendship 建立友谊
+frustration|n.|*挫败,沮丧;受挫|B|a sense of frustration 挫败感
+gesture|n./v.|*手势,姿态;做手势|B|make a gesture 做手势
+gratitude|n.|*感激,感谢|B|express gratitude 表达感谢
+guilt|n.|*内疚,罪过;有罪|B|a sense of guilt 内疚感
+harm|n./v.|*伤害,损害;危害|A|do harm to 对…有害
+importance|n.|*重要,重要性|A|attach importance to 重视
+independence|n.|*独立,自主|A|gain independence 获得独立
+injury|n.|*伤害,损伤;受伤处|A|suffer an injury 受伤
+instruction|n.|*指示,命令;用法说明;教学|A|follow instructions 按说明做
+insurance|n.|*保险,保险费;保障措施|A|insurance company 保险公司
+judgement|n.|*判断,判断力;看法,评价|B|make a judgement 作判断
+kindness|n.|*仁慈,好意;友好的行为|A|out of kindness 出于好意
+labour|n./v.|*劳动,工作;劳工;分娩|A|labour force 劳动力
+loss|n.|*丧失,损失;亏损;失败|A|at a loss 不知所措
+luck|n.|*运气,好运|A|by luck 靠运气；bad luck 倒霉
+meaning|n.|*意义,意思;目的|A|the meaning of life 生命的意义
+medication|n.|*药物,药物治疗|B|be on medication 在服药
+mixture|n.|*混合,混合物|A|a mixture of …的混合物
+moderation|n.|*适度,节制;温和|B|in moderation 适量地
+mystery|n.|*神秘,奥秘;疑案;推理小说|A|a mystery to 对…来说是个谜
+neighbour|n.|*邻居,邻人;邻国|A|next-door neighbour 隔壁邻居
+nightmare|n.|*噩梦;可怕的经历|A|have a nightmare 做噩梦
+novelty|n.|*新奇,新颖;新奇的事物|B|the novelty of …的新奇感
+objection|n.|*反对,异议;反对的理由|B|raise an objection 提出异议
+oil|n./v.|*油,石油;润滑油;上油|A|oil price 油价
+organisation|n.|*组织,团体;组织工作,安排|A|set up an organisation 成立组织
+ownership|n.|*所有权,物主身份|B|private ownership 私有制
+package|n./v.|*包裹,包装;一揽子（交易）|A|package tour 跟团游
+personality|n.|*个性,人格;名人|B|personality test 性格测试
+physician|n.|*医生,内科医生|B|chief physician 主任医师
+piece|n.|*一块,一片;件,篇;部件|A|a piece of 一块（片、件）
+prescription|n.|*处方,药方;规定,指示|B|write a prescription 开处方
+pride|n./v.|*自豪,骄傲;自尊心;以…自豪|A|take pride in 以…为荣
+probability|n.|*可能性,概率;很可能的事|B|in all probability 十有八九
+recommendation|n.|*推荐,建议;推荐信|B|on the recommendation of 经…推荐
+reduction|n.|*减少,降低;缩版|B|a reduction in …的减少
+reliance|n.|*依赖,依靠;信任|B|reliance on 依赖
+reliability|n.|*可靠性,可信度|B|reliability of …的可靠性
+reluctance|n.|*不情愿,勉强|B|with reluctance 勉强地
+replacement|n.|*替换,代替;接替者|B|replacement for …的替代品
+responsibility|n.|*责任,职责;责任心|A|take responsibility for 对…负责
+retail|n./v./adj.|*零售;零售的|A|retail price 零售价
+revision|n.|*修订,修改;复习|B|do revision 复习
+ritual|n./adj.|*仪式,惯例;习惯性的|B|daily ritual 日常惯例
+satisfaction|n.|*满意,满足;赔偿|A|to one's satisfaction 令人满意
+scarcity|n.|*缺乏,不足;稀少|B|scarcity of …的短缺
+scenery|n.|*风景,景色;舞台布景|A|enjoy the scenery 欣赏风景
+section|n.|*部分,部门;章节;截面|A|a section of 一部分
+security|n.|*安全,保安;保障;证券|A|security check 安全检查
+series|n.|*系列,连续;丛书;系列节目|A|a series of 一系列
+sight|n./v.|*视力,视觉;景象;看见|A|at first sight 乍一看；out of sight 看不见
+silence|n./v.|*寂静,沉默;使安静|A|in silence 沉默地
+stomach|n.|*胃,腹部;胃口|A|on an empty stomach 空腹
+storage|n.|*储存,保管;仓库;存储|B|in storage 储存中
+temperature|n.|*温度,气温;体温|A|take one's temperature 量体温
+thought|n.|*思想,想法;思考;关心|A|lost in thought 陷入沉思
+tie|n./v.|*领带;纽带,关系;平局;系,捆|A|tie up 系好；tie in with 与…一致
+tiredness|n.|*疲劳,疲倦|A|shake off tiredness 消除疲劳
+tourist|n./adj.|*游客,旅行者;旅游的|A|tourist attraction 旅游景点
+transition|n.|*过渡,转变;转型|B|transition to 向…过渡
+traveller|n.|*旅行者,旅客|A|fellow traveller 同行者
+uncertainty|n.|*不确定,不确定性的事物|B|uncertainty about 对…不确定
+vegetable|n.|*蔬菜;植物人|A|green vegetables 青菜
+weakness|n.|*虚弱,软弱;弱点,缺点|A|have a weakness for 特别爱好
+weekend|n.|*周末|A|at the weekend 在周末
+workforce|n.|*劳动力,职工总数|B|skilled workforce 熟练劳动力
+workplace|n.|*工作场所,车间|B|in the workplace 在工作场所
+
+## ---- 形容词 / 副词 ----
+accordingly|adv.|*因此,于是;相应地|B|act accordingly 照着办
+active|adj.|*积极的,活跃的;主动的;在活动中的|A|take an active part in 积极参加
+alike|adj./adv.|*相同的,相像的;同样地|A|look alike 长得像
+artistic|adj.|*艺术的,美术的;有艺术天赋的|A|artistic taste 艺术品位
+aside|adv.|*在旁边,到旁边;撇开|A|aside from 除…之外
+automatic|adj.|*自动的;无意识的,习惯性的|A|automatic door 自动门
+beneficial|adj.|*有益的,有利的|B|be beneficial to 对…有益
+beside|prep.|*在…旁边;与…相比|A|beside the point 离题
+beyond|prep./adv.|*超出,超过;在…那一边|A|beyond doubt 毫无疑问
+bitter|adj.|*苦的;痛苦的;严寒的;激烈的|A|bitter tears 辛酸的眼泪
+bored|adj.|*感到厌烦的,无聊的|A|be bored with 对…厌烦
+broad|adj.|*宽的,广阔的;广泛的;概括的|A|in broad terms 大体上
+calm|adj./v./n.|*平静的,镇静的;使平静;平静|A|calm down 冷静下来
+clever|adj.|*聪明的,机灵的;灵巧的|A|be clever at 擅长
+commercial|adj./n.|*商业的,商务的;商业广告|A|commercial centre 商业中心
+compulsory|adj.|*强制的,义务的;必修的|B|compulsory education 义务教育
+confident|adj.|*自信的,确信的|A|be confident of 对…有信心
+consequently|adv.|*因此,所以;结果|B|consequently 因此
+correct|adj./v.|*正确的,恰当的;改正,纠正|A|correct mistakes 改错
+cultural|adj.|*文化的,文化上的;教养的|A|cultural differences 文化差异
+decisive|adj.|*决定性的;果断的,坚定的|B|a decisive factor 决定性因素
+deep|adj./adv.|*深的;深刻的;深深地|A|deep into the night 深夜
+dense|adj.|*密集的,稠密的;浓厚的|B|dense fog 浓雾
+direct|adj./v.|*直接的;直达的;指导,指挥;对准|A|direct to 指向
+dishonest|adj.|*不诚实的,不正直的|B|be dishonest about 在…上不诚实
+disposable|adj.|*一次性的;可自由支配的|B|disposable income 可支配收入
+dominant|adj.|*占优势的,支配的;显著的|B|dominant position 主导地位
+double|adj./v./n.|*两倍的,双的;加倍;两倍|A|double check 复核
+empty|adj./v.|*空的,空洞的;倒空,变空|A|empty of 缺乏
+exact|adj.|*确切的,精确的;严谨的|A|to be exact 确切地说
+excellent|adj.|*优秀的,杰出的;极好的|A|excellent at 擅长于
+fantastic|adj.|*极好的,了不起的;奇异的;极大的|A|fantastic view 极美的景色
+favourable|adj.|*有利的,赞同的;讨人喜欢的|B|favourable to 对…有利
+forbidden|adj.|*被禁止的,不许的|B|forbidden zone 禁区
+frankly|adv.|*坦白地,直率地;老实说|B|frankly speaking 坦白说
+full|adj.|*满的,充满的;完整的;饱的|A|be full of 充满
+general|adj./n.|*普遍的,总的;一般的;将军|A|in general 总之
+guilty|adj.|*有罪的;内疚的,自觉有罪的|B|be guilty of 犯有…罪
+halfway|adj./adv.|*中途的,不彻底的;半途|A|halfway through 进行到一半
+harmful|adj.|*有害的,致伤的|A|be harmful to 对…有害
+harmonious|adj.|*和谐的,和睦的;协调的|B|harmonious society 和谐社会
+healthy|adj.|*健康的,健壮的;有益身心的|A|keep healthy 保持健康
+heavy|adj.|*重的,沉重的;大量的;严重的|A|heavy rain 大雨
+hidden|adj.|*隐藏的,隐秘的|A|hidden danger 隐患
+honest|adj.|*诚实的,正直的;坦诚的|A|to be honest 说实话
+illegal|adj.|*不合法的,违法的|B|illegal act 违法行为
+immune|adj.|*免疫的,有免疫力的;免除的|B|be immune to 对…免疫
+impatient|adj.|*不耐烦的,急躁的;渴望的|B|be impatient with 对…不耐烦
+indeed|adv.|*确实,实在;真正地|A|indeed 的确
+independent|adj.|*独立的,自主的;不相关的|A|independent of 不依赖于
+instantly|adv.|*立刻,马上;立即地|A|instantly recognisable 一眼就认得出
+logical|adj.|*逻辑的,合乎逻辑的;合理的|B|a logical conclusion 合理的结论
+mild|adj.|*温和的,温柔的;轻微的;味淡的|A|mild weather 温和的天气
+modern|adj.|*现代的,近代的;新式的|A|modern society 现代社会
+necessarily|adv.|*必然地,必定地;必要地|B|not necessarily 不一定
+neutral|adj.|*中立的,中性的;不确定的|B|remain neutral 保持中立
+outside|n./adj./prep.|*外部,外面;外部的;在…外面|A|outside of 在…之外
+perfect|adj./v.|*完美的,完好的;使完善|A|perfect for 非常适合
+persistent|adj.|*坚持不懈的;持续不断的|B|persistent effort 不懈的努力
+perhaps|adv.|*也许,大概,可能|A|perhaps not 也许不是
+polite|adj.|*有礼貌的,客气的;文雅的|A|be polite to 对…有礼貌
+powerful|adj.|*强大的,有力的;有权威的|A|powerful tool 有力的工具
+probably|adv.|*大概,或许,很可能|A|probably 很可能
+profitable|adj.|*有利可图的,赚钱的;有益的|B|profitable business 赚钱的生意
+remarkably|adv.|*引人注目地;异常地,非常|B|remarkably well 出奇地好
+roughly|adv.|*粗略地,大约;粗暴地|A|roughly speaking 粗略地说
+smart|adj.|*聪明的,精明的;整洁的;时髦的|A|smart phone 智能手机
+special|adj.|*特殊的,特别的;专门的|A|special offer 特价
+strong|adj.|*强壮的,强大的;强烈的;擅长的|A|be strong in 擅长
+sudden|adj.|*突然的,意外的|A|all of a sudden 突然
+suitable|adj.|*合适的,适宜的,适当的|A|be suitable for 适合于
+sure|adj./adv.|*确信的,肯定的;当然,确实|A|make sure 确保
+sustainable|adj.|*可持续的,能维持的|B|sustainable development 可持续发展
+systematically|adv.|*系统地,有条理地|B|systematically 系统地
+transferable|adj.|*可转移的,可转让的|B|transferable skills 可迁移的技能
+twice|adv.|*两次,两倍|A|twice as much 两倍
+unable|adj.|*不能的,不会的;无能力的|A|be unable to do 不能做
+unfamiliar|adj.|*不熟悉的,陌生的;没有经验的|B|be unfamiliar with 不熟悉
+unlimited|adj.|*无限的,无限制的;无条件的|B|unlimited access 无限制使用
+unpleasant|adj.|*使人不愉快的,讨厌的|B|unpleasant smell 难闻的气味
+unpredictable|adj.|*不可预测的,难以预料的|B|unpredictable weather 变幻莫测的天气
+vegetarian|n./adj.|*素食者;素食的|A|vegetarian diet 素食
+
+## ---- 基础名词/数量（真题里出现，词库一直没有） ----
+accident|n.|*事故,意外的事;偶然|A|by accident 偶然；traffic accident 交通事故
+birth|n.|*出生,诞生;出身;起源|A|give birth to 生（孩子）、产生
+bottom|n./adj.|*底部,底;尽头;最低的|A|at the bottom of 在…底部
+coast|n.|*海岸,海滨;滑行|A|on the coast 在海岸边
+coin|n./v.|*硬币,钱币;铸造（硬币）|A|flip a coin 抛硬币
+crop|n./v.|*作物,庄稼;收成;剪短|A|crop up 突然出现
+custom|n.|*习惯,风俗;惯例;惠顾|A|follow the custom 遵从习俗
+customs|n.|*海关,关税|A|go through customs 过海关
+decision|n.|*决定,决心;决议|A|make a decision 作决定
+field|n.|*田地,田野;领域,范围;场地|A|in the field of 在…领域
+flock|n./v.|*群,一群;聚集|B|a flock of 一群
+
+## ---- 原形缺位导致整族词都查不到的基础词 ----
+# 这些词本身在真题里出现不多，但它们的变形（got / eaten / shown / slept /
+# thrown / drunk / born）反复出现。词库里没有原形，IRREGULAR_PAIRS 里
+# 那条映射就永远命不中，于是整族词形全被记成"未收录"。补原形一个词就够。
+get|v.|*得到,获得;变得;到达;使,让|A|get along with 与…相处；get over 克服
+throw|v./n.|*扔,抛,投;摔倒;举办;投掷的距离|A|throw away 扔掉；throw a party 办聚会
+sit|v.|*坐,就座;坐落;开会|A|sit down 坐下；sit up 熬夜
+feed|v./n.|*喂（养）,饲养;供养;饲料|A|feed on 以…为食
+see|v.|*看见,看到;明白,理解;会见;送,陪|A|see off 送行；see to it that 务必使
+generation|n.|*一代（人）;代,一代;产生|A|from generation to generation 代代相传
+house|n./v.|*房子,住宅;议院;给…房子住|A|move house 搬家
+town|n.|*城镇,市镇;市区,商业区|A|go to town 进城
+river|n.|*江,河,河流|A|cross the river 过河
+side|n./adj.|*边,旁边;一方,派别;侧面的|A|side by side 并肩；take sides 站队
+shape|n./v.|*形状,外形;状况;形成,塑造|A|in shape 状态好；shape up 进展顺利
+plant|n./v.|*植物,作物;工厂;种植,栽种|A|power plant 发电厂
+meal|n.|*一餐,一顿饭;膳食|A|have a meal 吃饭
+factory|n.|*工厂,制造厂|A|factory worker 工厂工人
+firm|n./adj.|*公司,商行;坚硬的,坚定的|A|stand firm 立场坚定
+force|n./v.|*力量,力气;武力;军队;强迫,迫使|A|by force 用武力；force sb to do 迫使某人做
+guest|n.|*客人,宾客;旅客|A|be my guest 请便
+nurse|n./v.|*护士,保姆;护理,照料|A|nurse a cold 调养感冒
+meeting|n.|*会议,集会;会面,相遇|A|hold a meeting 开会
+movement|n.|*运动,活动;移动,迁移;动向|A|movement of …的移动
+sale|n.|*卖,出售;廉价出售;销售额|A|for sale 待售；on sale 打折
+state|n./v.|*状态,状况;国家,政府;州;陈述,声明|A|in a state of 处于…状态
+speech|n.|*演说,讲话;言语,说话能力|A|make a speech 发表演说
+site|n./v.|*地点,场所;遗址;使坐落在|A|on site 在现场
+session|n.|*会议,一届会期;一段时间|A|in session 在开会
+quarter|n.|*四分之一;一季度;一刻钟;（城市）区|A|a quarter of 四分之一的
+post|n./v.|*邮政,邮件;岗位,职位;张贴,公布;邮寄|A|post office 邮局
+packet|n.|*小包,小盒;一大笔钱|A|a packet of 一包
+flat|n./adj.|*公寓套房;平的,平坦的;平淡的|A|flat tyre 瘪了的轮胎
+row|n./v.|*排,行;划船;吵闹|A|in a row 连续地
+tear|n./v.|*眼泪;撕,扯;撕裂|A|in tears 流着泪；tear up 撕碎
+taxi|n.|*出租车,计程车|A|take a taxi 打的
+tap|n./v.|*水龙头;轻拍,轻敲;开发,利用|A|tap water 自来水
+sauce|n.|*酱汁,调味汁;无礼的话|A|soy sauce 酱油
+recording|n.|*录音,录像;记录|A|make a recording 录音
+database|n.|*数据库,资料库|B|database system 数据库系统
+gallery|n.|*美术馆,画廊;走廊;顶层楼座|B|art gallery 美术馆
+investor|n.|*投资者,出资者|B|attract investors 吸引投资者
+listener|n.|*听众,收听者;倾听者|A|good listener 善于倾听的人
+organiser|n.|*组织者,筹办者|A|the organiser of …的组织者
+keyboard|n.|*键盘;键盘乐器|A|keyboard shortcut 键盘快捷键
+villager|n.|*村民,乡村居民|A|local villagers 当地村民
+bottle|n./v.|*瓶子;一瓶的量;装瓶|A|a bottle of 一瓶

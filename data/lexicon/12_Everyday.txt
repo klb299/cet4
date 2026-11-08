@@ -3,26 +3,19 @@
 # 动词和形容词。这些词单看都会，但在真题长句里常因不熟搭配而读不通。
 # 格式：单词|词性|义项(;分隔,*为常考义)|等级|搭配提示
 
+# 注：are / is / was / were / of / to / can / should 这类纯虚词已从词库移出 —— stopwords.txt 早就判定它们"做卡片没有学习价值"，留着只会让首页前几张卡变成 they / are。 前四个会经 IRREGULAR_PAIRS 折回 be，不漏词。
 body|n.|*身体;主体;团体;尸体|A|body language 肢体语言
 exercise|n./v.|*锻炼;练习;运用;行使|A|do exercise 做运动
 hand|n./v.|*手;指针;人手;递给|A|on the other hand 另一方面
 book|n./v.|*书;书籍;预订|A|book a ticket 订票
-books|n.|*书(book 的复数)|A|—
 paper|n.|*纸;论文;报纸;文件|A|paper work 文书工作
 read|v.|*阅读;读懂;标明|A|read aloud 朗读
-readers|n.|*读者;读物(reader 的复数)|A|—
 bookstore|n.|*书店|A|—
 page|n.|*页;页面;时期|A|front page 头版
 story|n.|*故事;报道;楼层|A|tell a story 讲故事
-stories|n.|*故事(story 的复数)|A|—
 lesson|n.|*课;教训;课程|A|learn a lesson 吸取教训
-classes|n.|*班级;课程(class 的复数)|A|—
-essays|n.|*文章;论文(essay 的复数)|A|—
-tests|n.|*测试;考试(test 的复数)|A|—
 answer|n./v.|*回答;答案;解答|A|answer for 对…负责
 ask|v.|*问;要求;请求|A|ask for 请求
-asked|v.|*问(ask 的过去式)|A|—
-mistakes|n.|*错误;失误(mistake 的复数)|A|make mistakes 犯错
 advice|n.|*建议;忠告;意见|A|a piece of advice 一条建议
 discussion|n.|*讨论;商议;论述|A|under discussion 在讨论中
 explanation|n.|*解释;说明;辩解|A|—
@@ -30,29 +23,19 @@ choice|n.|*选择;选择权;供选择的东西|A|make a choice 做选择
 send|v.|*发送;寄;派遣|A|send for 派人去请
 bring|v.|*带来;引起;使处于|A|bring about 引起
 come|v.|*来;到达;发生;变得|A|come true 实现
-comes|v.|*来(come 的第三人称单数)|A|—
 look|v./n.|*看;看起来;神情|A|look after 照顾
 meet|v.|*遇见;满足;会面|A|meet the need 满足需求
 reach|v./n.|*到达;达到;伸手;范围|A|out of reach 够不着
 buy|v.|*买;购买;相信|A|buy up 全部买下
 leave|v./n.|*离开;留下;休假|A|leave behind 留下
-leaving|v.|*离开(leave 的现在分词)|A|—
 lost|v./adj.|*丢失(lose 的过去式);迷失的|A|get lost 迷路
-lived|v.|*居住(live 的过去式)|A|—
 living|n./adj.|*生活;生计;活着的|A|make a living 谋生
 known|adj./v.|*已知的;知名的(know 的过去分词)|A|be known as 被称为
 set|v./n.|*设置;放置;一套;确定|A|set up 建立
 start|v./n.|*开始;启动;起点|A|to start with 首先
 end|n./v.|*结束;末端;目的|A|in the end 最后
-growing|adj./v.|*增长的;生长(grow 的现在分词)|A|growing demand 日益增长的需求
-saves|v.|*节省(save 的第三人称单数)|A|—
-created|v.|*创造(create 的过去式/过去分词)|A|—
-recorded|v.|*记录(record 的过去式/过去分词)|A|—
-planned|v./adj.|*计划(plan 的过去式);有计划的|A|—
 tried|v.|*尝试(try 的过去式);努力|A|—
-eating|v.|*吃(eat 的现在分词)|A|eating habits 饮食习惯
 activity|n.|*活动;活跃;行动|A|after-school activity 课外活动
-activities|n.|*活动(activity 的复数)|A|—
 relationship|n.|*关系;关联;亲属关系|A|—
 behaviour|n.|*行为;举止;表现|A|consumer behaviour 消费行为
 management|n.|*管理;经营;管理层|A|time management 时间管理
@@ -60,18 +43,10 @@ intelligence|n.|*智力;智慧;情报|A|artificial intelligence 人工智能
 assessment|n.|*评估;评价;评定|A|continuous assessment 持续评估
 payment|n.|*支付;付款;报酬|A|mobile payment 移动支付
 platform|n.|*平台;站台;纲领|A|online platform 在线平台
-platforms|n.|*平台(platform 的复数)|A|—
-machines|n.|*机器(machine 的复数)|A|—
-robots|n.|*机器人(robot 的复数)|A|—
-drivers|n.|*司机;驱动因素(driver 的复数)|A|—
-owners|n.|*所有者(owner 的复数)|A|—
-critics|n.|*批评家;评论家(critic 的复数)|A|—
 economists|n.|*经济学家(economist 的复数)|A|—
-doctors|n.|*医生(doctor 的复数)|A|—
 nobody|pron.|*没有人;无人|A|—
 someone|pron.|*某人;有人|A|—
 everything|pron.|*一切;所有事物|A|—
-things|n.|*东西;事情(thing 的复数)|A|—
 thing|n.|*东西;事情;物品|A|—
 goods|n.|*商品;货物|A|—
 music|n.|*音乐;乐曲;乐谱|A|listen to music 听音乐
@@ -89,12 +64,9 @@ museum|n.|*博物馆;展览馆|A|—
 entrance|n.|*入口;进入;入学|A|entrance exam 入学考试
 electricity|n.|*电;电力;电流|A|—
 district|n.|*地区;区域;行政区|A|—
-districts|n.|*地区(district 的复数)|A|—
-streets|n.|*街道(street 的复数)|A|—
 route|n.|*路线;途径;航线|A|bus route 公交线路
 journey|n.|*旅程;行程;旅行|A|—
 bike|n.|*自行车|A|—
-bicycles|n.|*自行车(bicycle 的复数)|A|—
 cycle|v./n.|*骑自行车;循环;周期|A|—
 cycle lane|n.|*自行车道|A|—
 planner|n.|*规划者;计划表;设计者|A|daily planner 日程本
@@ -108,7 +80,6 @@ sharp|adj.|*锐利的;急剧的;敏锐的|A|a sharp rise 急剧上升
 quiet|adj./n.|*安静的;平静的;安静|A|keep quiet 保持安静
 simple|adj.|*简单的;朴素的;单纯的|A|simple and clear 简单明了
 slow|adj./v.|*缓慢的;减速|A|slow down 减速
-smaller|adj.|*更小的|A|—
 lower|adj./v.|*较低的;降低|A|lower the cost 降低成本
 uncomfortable|adj.|*不舒服的;不自在的|A|—
 foolish|adj.|*愚蠢的;傻的|A|—
@@ -118,10 +89,8 @@ good|adj.|*好的;擅长的;有益的|A|be good at 擅长
 bad|adj.|*坏的;严重的;有害的|A|be bad for 对…有害
 certain|adj.|*确定的;某个;必然的|A|for certain 确定地
 real|adj.|*真实的;真正的;实际的|A|—
-really|adv.|*真正地;确实;非常|A|—
 actually|adv.|*实际上;事实上;居然|A|—
 easily|adv.|*容易地;无疑地|A|—
-easier|adj./adv.|*更容易的;更容易地|A|—
 sometimes|adv.|*有时;间或|A|—
 repeatedly|adv.|*反复地;再三地|A|—
 later|adv./adj.|*后来;较晚的;稍后|A|sooner or later 早晚
@@ -148,7 +117,6 @@ elderly|adj.|*年长的;上了年纪的|A|the elderly 老年人
 kind|n./adj.|*种类;友好的;善良的|A|kind of 有点儿
 sound|n./v.|*声音;听起来;合理的|A|sound like 听起来像
 air|n.|*空气;天空;气氛|A|by air 乘飞机
-trees|n.|*树(tree 的复数)|A|—
 spread|v./n.|*传播;展开;蔓延|A|spread out 散开
 differ|v.|*不同;相异;意见不合|A|differ from 与…不同
 emphasise|v.|*强调;着重;使突出|A|—
@@ -156,7 +124,6 @@ analyse|v.|*分析;解析|A|—
 examine|v.|*检查;审查;考核|A|—
 communicate|v.|*交流;沟通;传达|A|communicate with 与…交流
 inconvenience|n.|*不便;麻烦|A|—
-regulations|n.|*规章;条例(regulation 的复数)|A|—
 consumption|n.|*消费;消耗;消耗量|A|energy consumption 能源消耗
 association|n.|*协会;联想;关联|A|—
 robot|n.|*机器人;自动装置|A|robot arm 机械臂
@@ -168,7 +135,6 @@ step|n./v.|*步骤;台阶;措施;踏|A|step by step 逐步
 face|n./v.|*脸;表面;面对;面临|A|face up to 勇敢面对
 able|adj.|*能够的;有能力的|A|be able to 能够
 morning|n.|*早晨;上午|A|in the morning 在早上
-ideas|n.|*主意;想法(idea 的复数)|A|—
 collection|n.|*收藏;收集;作品集|A|—
 stage|n.|*阶段;舞台;时期|A|at this stage 在这个阶段
 connection|n.|*联系;连接;关联|A|in connection with 与…有关

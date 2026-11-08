@@ -1,0 +1,132 @@
+# 真题高频但词库仍缺的词（第二批，正文出现 ≥2 次）
+#
+# 第一批见 13_BasicGap.txt（正文出现 ≥3 次）。这一批门槛放到 2 次，
+# 是跑完 13 册之后未收录清单里"正文里真出现过 ≥2 次"的那部分。
+# 只在题干/选项里露过脸的词没收——多半是题干套话或选项干扰词。
+#
+# 格式：单词|词性|义项(分号分隔，带*者为常考义)|等级(A基础/B核心/C进阶)|搭配提示
+
+## ---- 动词 ----
+accept|v.|*接受,收下;同意,认可|A|accept an offer 接受提议；be widely accepted 被广泛接受
+add|v.|*增加,添加;补充说;合计|A|add to 增加；add up 加起来
+advertise|v.|*做广告,宣传;登广告征求|B|advertise products 为产品做广告
+arrive|v.|*到达,抵达;达成|A|arrive at/in 到达；arrive at a conclusion 得出结论
+begin|v.|*开始,着手|A|begin with 以…开始；to begin with 首先
+break|v./n.|*打破,折断;违反;休息,间歇|A|break down 出故障；break up 分手,解散
+call|v./n.|*打电话;叫,称呼;拜访|A|call for 需要；call off 取消
+care|n./v.|*关心,照料;在乎,介意|A|care about 关心；take care of 照顾
+convert|v.|*转换,转变;改建|B|convert A into B 把 A 转成 B
+cut|v./n.|*切,剪;削减;伤口|A|cut down 削减；cut off 切断
+draw|v./n.|*画;拉,拖;吸引;平局|A|draw a conclusion 得出结论；draw on 利用
+drink|v./n.|*喝,饮;饮料|A|drink to 为…干杯
+drive|v./n.|*驾驶;驱使,迫使|A|drive sb to do 迫使某人做
+enter|v.|*进入;参加;输入|A|enter into 开始参与
+exclude|v.|*排除,不包括;把…排斥在外|B|exclude sb from 把某人排除在…之外
+fall|v./n.|*落下,跌倒;下降;秋天|A|fall into 陷入；fall behind 落后
+invent|v.|*发明,创造;编造|B|invent a new device 发明新装置
+lie|v./n.|*躺,位于;说谎;谎言|A|lie in 在于；lie down 躺下
+love|v./n.|*爱,热爱;喜爱|A|fall in love with 爱上
+organise|v.|*组织,安排;整理|B|organise an event 组织活动（也拼 organize）
+pass|v./n.|*通过,经过;传递;及格|A|pass by 经过；pass on 传递
+perform|v.|*表演,演出;执行,履行;表现|B|perform a task 执行任务；perform well 表现出色
+practise|v.|*练习,实习;实践|A|practise doing 练习做（美式拼 practice）
+print|v./n.|*印刷,打印;印刷品|B|print out 打印出来
+prove|v.|*证明,证实;结果是|B|prove to be 证明是
+remember|v.|*记得,记住;想起|A|remember to do 记得去做；remember doing 记得做过
+return|v./n.|*返回,回来;归还;回报|A|return to 回到；in return 作为回报
+stand|v./n.|*站,站立;忍受;立场|A|stand for 代表；can't stand 无法忍受
+try|v./n.|*尝试,试图;试用|A|try to do 设法做；try doing 试着做
+
+## ---- 名词 ----
+art|n.|*艺术,美术;技艺;文科|A|modern art 现代艺术；work of art 艺术品
+background|n.|*背景,出身;后台|B|family background 家庭背景
+bargain|n./v.|*便宜货,廉价品;讨价还价|B|a good bargain 划算的买卖
+boat|n.|*船,小船|A|by boat 乘船
+calligraphy|n.|*书法,书法艺术|C|Chinese calligraphy 中国书法
+case|n.|*情况,案例;案件;盒子|A|in case 以防；in any case 无论如何
+clinic|n.|*诊所,门诊部|B|visit a clinic 去诊所
+comparison|n.|*比较,对比;比喻|B|in comparison with 与…相比
+compass|n.|*指南针,罗盘;圆规|B|a pair of compasses 一副圆规
+container|n.|*容器,集装箱|B|a plastic container 塑料容器
+curriculum|n.|*课程,全部课程|C|curriculum design 课程设计
+danger|n.|*危险;威胁|A|in danger 处于危险中；danger of 有…的危险
+dinner|n.|*正餐,晚餐;宴会|A|have dinner 吃晚饭
+director|n.|*导演;主管,董事|B|the director of …的负责人
+distinction|n.|*区别,差别;优秀,杰出|C|draw a distinction 区分
+donation|n.|*捐赠,捐款|B|make a donation 捐款
+dragon|n.|*龙|B|the Year of the Dragon 龙年
+encouragement|n.|*鼓励,激励|B|give encouragement 给予鼓励
+engineer|n.|*工程师;技师|B|a software engineer 软件工程师
+expectation|n.|*期望,预期;期望的事物|B|beyond expectations 超出预期
+expression|n.|*表达,表示;表情;词语|B|freedom of expression 言论自由
+fish|n./v.|*鱼;钓鱼|A|go fishing 去钓鱼
+flexibility|n.|*灵活性,弹性;柔韧性|C|flexibility in 在…上的灵活性
+friend|n.|*朋友,友人|A|make friends with 与…交朋友
+gift|n.|*礼物;天赋,才能|A|a gift for 对…的天赋
+growth|n.|*增长,成长;生长|B|economic growth 经济增长
+gunpowder|n.|*火药|C|the invention of gunpowder 火药的发明
+hope|n.|*希望,期望|A|in the hope of 怀着…的希望
+improvement|n.|*改进,改善;改进之处|B|room for improvement 改进空间
+institution|n.|*机构,团体;制度|C|financial institution 金融机构
+intake|n.|*摄入量;招收人数|C|daily intake 每日摄入量
+interpersonal|adj.|*人际的,人与人之间的|C|interpersonal skills 人际交往能力
+invention|n.|*发明,发明物;创造|B|the invention of …的发明
+kilometre|n.|*千米,公里|A|square kilometres 平方公里
+lecture|n./v.|*讲座,演讲|B|a lecture on 关于…的讲座
+letter|n.|*信,信件;字母|A|a letter of complaint 投诉信
+librarian|n.|*图书管理员|B|the school librarian 学校图书管理员
+lot|n.|*大量,许多;一块地|A|a lot of 许多；parking lot 停车场
+map|n.|*地图|A|draw a map 画地图
+moment|n.|*片刻,瞬间;时刻|A|at the moment 此刻；in a moment 马上
+note|n./v.|*笔记,便条;注意;音符|A|take notes 记笔记；note that 注意到
+participant|n.|*参与者,参加者|B|participants in …的参与者
+peace|n.|*和平;平静,安宁|B|in peace 安静地；peace of mind 内心平静
+pet|n.|*宠物;宠爱|A|keep a pet 养宠物
+poem|n.|*诗,诗歌|A|write a poem 写诗
+race|n./v.|*比赛,赛跑;种族;参赛|A|a race against time 与时间赛跑
+rain|n./v.|*雨;下雨|A|heavy rain 大雨
+relative|n./adj.|*亲戚,亲属;相对的|B|a close relative 近亲；relative to 相对于
+reputation|n.|*名声,声誉|B|have a reputation for 以…著称
+role|n.|*角色;作用,职责|A|play a role in 在…中起作用
+scientist|n.|*科学家|A|a team of scientists 科学家团队
+sense|n./v.|*感觉,感官;意义;感觉到|A|make sense 讲得通；a sense of …感
+sentence|n./v.|*句子;判决;判刑|A|make a sentence 造句
+shelf|n.|*架子,搁板|A|on the shelf 在架子上（复数 shelves）
+shopper|n.|*购物者,顾客|B|online shoppers 网购者
+smartphone|n.|*智能手机|A|use a smartphone 用智能手机
+software|n.|*软件|B|software development 软件开发
+sum|n./v.|*总数,金额;总和;总计|B|a large sum of 一大笔…；sum up 总结
+supporter|n.|*支持者,拥护者|B|supporters of …的支持者
+term|n./v.|*学期;术语;条款;期限|A|in terms of 就…而言；long term 长期
+ticket|n.|*票,入场券;罚款单|A|a ticket for 去…的票
+truth|n.|*真相,事实;真理|B|tell the truth 说实话
+
+## ---- 形容词 / 副词 ----
+angry|adj.|*生气的,愤怒的|A|be angry with sb 生某人的气
+anxious|adj.|*焦虑的,担心的;渴望的|B|be anxious about 为…担心；be anxious to do 急于做
+attractive|adj.|*有吸引力的,吸引人的;漂亮的|B|an attractive offer 诱人的提议
+busy|adj.|*忙碌的,忙的;热闹的|A|be busy doing 忙于做
+careful|adj.|*小心的,仔细的;关心的|A|be careful with 对…小心
+classic|adj./n.|*经典的;典型的;经典作品|B|a classic example 典型例子
+comfortable|adj.|*舒适的,舒服的;自在的|A|feel comfortable 感到自在
+complicated|adj.|*复杂的,难懂的|B|a complicated problem 复杂的问题
+creative|adj.|*有创造力的,创作的|B|creative thinking 创造性思维
+crowded|adj.|*拥挤的,挤满的|A|be crowded with 挤满了…
+electronic|adj.|*电子的;电子设备的|B|electronic devices 电子设备
+endless|adj.|*无止境的,无穷尽的|B|an endless supply 无穷的供应
+financial|adj.|*财政的,金融的|B|financial support 财政支持
+fragile|adj.|*易碎的,脆弱的;虚弱的|C|a fragile environment 脆弱的环境
+heavily|adv.|*大量地;沉重地;严重地|B|heavily dependent on 严重依赖
+immediately|adv.|*立即,马上;紧接地|B|immediately after 紧接…之后
+measurable|adj.|*可测量的,明显的|C|measurable results 可衡量的结果
+noticeable|adj.|*显著的,明显的|B|a noticeable change 明显的变化
+nowadays|adv.|*如今,现今|B|nowadays 如今
+opposite|adj./prep./n.|*相反的;对面的;对立面|A|the opposite of …的反面
+poor|adj.|*贫穷的;差的,不好的;可怜的|A|poor in 在…方面差
+secondary|adj.|*次要的;中学的|B|secondary school 中学；secondary to 次于
+so-called|adj.|*所谓的,号称的|B|the so-called expert 所谓的专家
+strange|adj.|*奇怪的,不寻常的;陌生的|A|be strange to 对…陌生
+suddenly|adv.|*突然地,忽然|A|suddenly 突然
+successful|adj.|*成功的;有成就的|A|be successful in 在…方面成功
+uncertain|adj.|*不确定的,未知的;犹豫的|B|be uncertain about 对…不确定
+unwanted|adj.|*不需要的,多余的|B|unwanted attention 不想要的关注

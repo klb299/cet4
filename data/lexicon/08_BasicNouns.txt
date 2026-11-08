@@ -73,7 +73,7 @@ area|n.|*地区;面积;领域;范围|A|rural area 农村地区
 # —— 教育 / 学习 ——
 knowledge|n.|*知识;学问;了解;认识|A|a good knowledge of 对…很了解
 skill|n.|*技能,技巧;熟练;本领|A|communication skills 沟通技巧
-experience|n./v.|*经验;经历;体验;经历|A|work experience 工作经验
+experience|n./v.|*经验;经历;体验|A|work experience 工作经验
 attention|n.|*注意,注意力;照料;关注|A|pay attention to 注意
 question|n./v.|*问题;疑问;质疑;询问|A|ask a question 提问
 reason|n./v.|*原因,理由;理性;推理|A|the reason for …的原因

@@ -2,6 +2,8 @@
 # 校园、医学、社会、数量这几类是四级阅读的固定场景，词本身不难，但一进长句就成了拦路虎。
 # 格式：单词|词性|义项(;分隔,*为常考义)|等级|搭配提示
 
+# 注：are / is / was / were / of / to / can / should 这类纯虚词已从词库移出 —— stopwords.txt 早就判定它们"做卡片没有学习价值"，留着只会让首页前几张卡变成 they / are。 前四个会经 IRREGULAR_PAIRS 折回 be，不漏词。
+# 注：they / them / we / us / you / it / cannot 已从词库移出 —— 人称代词出现次数霸榜（they 曾有 178 次、排第一张卡），但没有学习价值。已在 stopwords 第 6 类备案，不会掉进未收录清单。
 library|n.|*图书馆;藏书;书房|A|school library 学校图书馆
 college|n.|*大学,学院;学会|A|go to college 上大学
 classroom|n.|*教室;课堂|A|in the classroom 在教室里
@@ -30,7 +32,6 @@ rule|n./v.|*规则;统治;规定;裁定|A|as a rule 通常
 service|n.|*服务;服役;公共设施|A|public service 公共服务
 price|n.|*价格;代价;价值|A|at any price 不惜代价
 effort|n.|*努力;尝试;成果|A|make an effort 努力
-minutes|n.|*分钟;片刻;会议记录|A|in a few minutes 几分钟后
 writing|n.|*写作;著作;笔迹|A|in writing 以书面形式
 reading|n.|*阅读;读物;读数|A|reading room 阅览室
 learning|n.|*学习;学问;知识|A|distance learning 远程学习
@@ -44,12 +45,6 @@ modest|adj.|*谦虚的;适度的;朴素的|B|a modest increase 小幅增长
 effective|adj.|*有效的;生效的|A|take effect 生效
 single|adj.|*单一的;单身的;唯一的|A|single out 挑出
 fixed|adj.|*固定的;不变的;确定的|A|fixed price 固定价格
-faster|adv./adj.|*更快地;更快的|A|—
-slower|adv./adj.|*更慢地;更慢的|A|—
-harder|adv./adj.|*更努力地;更难的|A|—
-longer|adv./adj.|*更久;更长的|A|no longer 不再
-carefully|adv.|*仔细地;小心地|A|—
-quickly|adv.|*迅速地;快地|A|—
 simply|adv.|*仅仅;简单地;简直|A|—
 almost|adv.|*几乎;差不多|A|—
 already|adv.|*已经;早已|A|—
@@ -76,19 +71,9 @@ with|prep.|*和…一起;具有;用;由于|A|along with 连同
 from|prep.|*从;来自;由于|A|apart from 除…之外
 by|prep.|*被;通过;在…旁;到…之前|A|by the way 顺便说
 for|prep./conj.|*为了;因为;给;持续|A|for the sake of 为了
-of|prep.|*…的;属于;由…组成|A|—
-to|prep.|*到;向;给;对于|A|—
 in|prep.|*在…里;在…期间;用|A|in order to 为了
 on|prep.|*在…上;关于;在…时候|A|on time 准时
 at|prep.|*在;向;以(速度)|A|at once 立刻
-it|pron.|*它;这;那|A|—
-they|pron.|*他们;她们;它们;人们|A|—
-them|pron.|*他们;她们;它们|A|—
-their|pron.|*他们的;她们的;它们的|A|—
-we|pron.|*我们|A|—
-our|pron.|*我们的|A|—
-us|pron.|*我们|A|—
-you|pron.|*你;你们;人们|A|—
 i|pron.|*我|A|—
 who|pron.|*谁;…的人;他/她|A|—
 which|pron./adj.|*哪一个;…的那个;关系代词|A|—
@@ -96,45 +81,14 @@ what|pron./adj.|*什么;…的;多么|A|—
 when|adv./conj.|*什么时候;当…时;虽然|A|—
 where|adv./conj.|*在哪里;在…的地方|A|—
 how|adv.|*怎样;多么;如何|A|how about 怎么样
-this|adj./pron.|*这;这个;这样|A|—
-these|adj./pron.|*这些|A|—
-those|adj./pron.|*那些|A|—
-its|pron.|*它的|A|—
 themselves|pron.|*他们自己;亲自|A|by themselves 独自
 itself|pron.|*它自己;本身|A|in itself 本身
 something|pron.|*某事;某物;大约|A|something like 大约
 anyone|pron.|*任何人;无论谁|A|—
-countries|n.|*国家;乡村(country 的复数)|A|—
-tasks|n.|*任务;作业(task 的复数)|A|—
-tools|n.|*工具;手段(tool 的复数)|A|—
-workers|n.|*工人;员工(worker 的复数)|A|—
-rules|n.|*规则;统治(rule 的复数)|A|—
-services|n.|*服务;设施(service 的复数)|A|—
-begun|v.|*开始(begin 的过去分词)|A|—
-made|v.|*制作;使得(make 的过去式/过去分词)|A|be made of 由…制成
-said|v.|*说;讲(say 的过去式/过去分词)|A|—
 used|v./adj.|*使用(use 的过去式);习惯于|A|be used to 习惯于
-helps|v.|*帮助;有助于(help 的第三人称单数)|A|—
-makes|v.|*使得;制造(make 的第三人称单数)|A|—
-does|v.|*做(do 的第三人称单数);助动词|A|—
-did|v.|*做(do 的过去式);助动词|A|—
 have|v./aux.|*有;使;吃;已经(构成完成时)|A|have to 必须
-has|v./aux.|*有(have 的第三人称单数)|A|has to 必须
-had|v./aux.|*有(have 的过去式);构成过去完成时|A|had better 最好
-is|v./aux.|*是;存在(be 的第三人称单数)|A|—
-are|v./aux.|*是;存在(be 的复数)|A|—
-was|v./aux.|*是(be 的过去式单数)|A|—
-were|v./aux.|*是(be 的过去式复数)|A|—
 be|v./aux.|*是;成为;存在|A|be able to 能够
-been|v./aux.|*是(be 的过去分词)|A|have been to 去过
-can|v./aux.|*能;可以;可能|A|—
-cannot|v./aux.|*不能;无法|A|—
-could|v./aux.|*能(can 的过去式);可能;本来可以|A|—
-should|v./aux.|*应该;应当;万一|A|—
 would|v./aux.|*将会;愿意;常常|A|would like 想要
-will|v./aux.|*将;会;愿意|A|—
-may|v./aux.|*可以;可能;也许|A|—
-must|v./aux.|*必须;一定;应当|A|—
 do|v./aux.|*做;干;助动词;行|A|do without 没有…也行
 not|adv.|*不;没有;并非|A|not at all 一点也不
 no longer|adv.|*不再|A|—

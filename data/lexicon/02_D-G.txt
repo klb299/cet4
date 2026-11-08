@@ -80,12 +80,12 @@ enthusiasm|n.|*热情,热忱|C|enthusiasm for 对…的热情
 entire|adj.|*全部的,整个的|A|
 entitle|v.|*给予权利;给…命名;使有资格|C|be entitled to 有权享有
 environment|n.|*环境,自然环境|A|protect the environment 保护环境
-equip|v.|*装备,配备|be equipped with 配备有
+equip|v.|*装备,配备|B|be equipped with 配备有
 equivalent|adj./n.|*相等的;等价物|C|be equivalent to 相当于
 error|n.|*错误,失误;误差|A|
 essential|adj./n.|*必不可少的;本质的;要素|B|be essential to 对…必不可少
 establish|v.|*建立,创立;确定;查明|A|establish a system 建立制度
-estimate|n./v.|*估计,估算|a rough estimate 粗略估计
+estimate|n./v.|*估计,估算|A|a rough estimate 粗略估计
 evaluate|v.|*评价,评估|B|evaluate the performance 评估表现
 eventually|adv.|*最终,终于|A|
 evidence|n.|*证据,迹象|A|evidence of/for …的证据
@@ -133,7 +133,7 @@ formulate|v.|*制定,规划;系统阐述|C|formulate a plan 制定计划
 fortune|n.|*财富;运气;命运|B|make a fortune 发财
 foundation|n.|*基础;地基;基金会;建立|A|lay a foundation 打基础
 framework|n.|*框架,结构;体制|C|within the framework of 在…框架内
-frequent|adj./v.|*频繁的;常去;频繁的|A|frequent visitor 常客
+frequent|adj./v.|*频繁的;常去|A|frequent visitor 常客
 frustrate|v.|*使沮丧;挫败|B|be frustrated with 对…感到沮丧
 fulfill|v.|*实现,履行;满足|B|fulfill a promise 履行承诺
 function|n./v.|*功能,作用;运转;函数|A|function as 起…作用

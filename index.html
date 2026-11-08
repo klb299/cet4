@@ -29,6 +29,7 @@ a.go:active{opacity:.85}
 .links a:active{border-color:var(--brand);color:var(--brand)}
 .tip{margin-top:18px;font-size:12px;color:var(--ink3);line-height:1.6;
   border-top:1px solid var(--line);padding-top:14px}
+.tip b{color:#92400e}
 @media (prefers-color-scheme:dark){
   :root{--bg:#15171a;--panel:#1d2024;--line:#2c3035;--ink:#e8eaed;--ink2:#a8afb8;
     --ink3:#7d848d;--brand:#5b8def;--soft:#1e2836}
@@ -39,11 +40,15 @@ a.go:active{opacity:.85}
 <body>
 <div class="box">
   <h1>CET-4 历年真题重点词</h1>
-  <div class="sub">结合题目背单词 · 每个词都配真题原句与中文译文</div>
+  <div class="sub">结合题目背单词 · 每个词配真题原句与中文译文</div>
   <ul>
-    <li><b>1016</b> 个重点词，<b>2431</b> 条真题原句，全部带中文翻译</li>
-    <li>覆盖 <b>2021 年 6 月 ~ 2026 年 6 月</b>，11 个场次、83 个题型块</li>
+    <li><b>1635</b> 个重点词，<b>3581</b> 条例句
+      （真题 <b>423</b> + 仿真 3158）</li>
+    <li>覆盖 <b>2021年6月 ~ 2026年6月</b>，11 个场次、83 个题型块</li>
+    <li>背完能读懂真题正文 <b>96.5%</b> 的实词
+      （5877 / 6088 个词次，已去掉 the / a / of 这类功能词）</li>
     <li>标注<b>词性、常考义、年份套次题型出处</b>，并给出此处语境词性</li>
+    <li>每个词有<b>易混词提醒</b>、每日 <b>30 词</b>计划，精读按你的水平标出<b>生词密度</b></li>
     <li>默认隐藏释义与译文，<b>点击自测</b>；手机端已适配，可直接加到主屏</li>
   </ul>
   <a class="go" href="output/index.html">开始背单词 →</a>
@@ -52,9 +57,10 @@ a.go:active{opacity:.85}
     <a href="output/Anki导入包.csv">Anki 导入包</a>
   </div>
   <div class="tip">
-    数据说明：2021-06 ~ 2024-06 为按真题题材与难度撰写的仿真语料，
-    2025-06 之后的 3 套为考后整理的真题片段。详情见仓库内
-    <code>data/2025-2026来源说明.md</code>。
+    <b>关于「真题」二字</b>：真题片段 23 块、仿真语料 60 块。2021-06 ~ 2024-06 是按真题题材与难度
+    人工撰写的仿真语料，用于补足样本，它的出现次数不等于考场频次；
+    学习页里每条例句都标了来源。详情见仓库内 <code>data/2025-2026来源说明.md</code>。
+    <br>生成于 2026-11-08 15:31。
   </div>
 </div>
 </body>

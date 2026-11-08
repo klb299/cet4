@@ -1,303 +1,272 @@
 # 语料高频但未收录进词库的词
-# 可自行补充到 data/lexicon/ 下的任意 .txt 文件（格式见文件头注释）
+# 格式：单词 <Tab> 正文次数 <Tab> 总次数。可补充到 data/lexicon/ 下的任意 .txt
+# 已滤掉功能词与题干套话（见 data/stopwords.txt）
+# 带例句的完整工作台见 output/未收录词工作台.html
 
-the	539
-and	269
-that	251
-but	47
-experiments	4
-opening	4
-save	4
-contact	3
-talking	3
-student's	3
-designers	3
-ventura	3
-skillman	3
-dementia	3
-fragile	2
-donations	2
-hopes	2
-maps	2
-signs	2
-measurable	2
-delivery	2
-whose	2
-riders	2
-flexibility	2
-accept	2
-onto	2
-restaurant	2
-falls	2
-complicated	2
-accepted	2
-none	2
-false	2
-deeper	2
-truth	2
-emotion	2
-rumours	2
-careful	2
-attractive	2
-check	2
-source	2
-love	2
-distinction	2
-mainly	2
-employment	2
-see	2
-towards	2
-dishes	2
-cut	2
-served	2
-electronic	2
-completely	2
-excluded	2
-abolished	2
-secondary	2
-noticeable	2
-improvement	2
-according	2
-term	2
-breaks	2
-stricter	2
-open	2
-sentence	2
-second-hand	2
-sign	2
-speed	2
-consumers	2
-uncertain	2
-reputation	2
-converted	2
-main	2
-returning	2
-grown	2
-fifty	2
-off	2
-strange	2
-shoppers	2
-suddenly	2
-call	2
-bargain	2
-beside	2
-comparison	2
-so-called	2
-discount	2
-poor	2
-unwanted	2
-cases	2
-generations	2
-animals	2
-begin	2
-live	2
-scientists	2
-supporters	2
-danger	2
-draw	2
-try	2
-librarian	2
-closed	2
-participants	2
-words	2
-difficulty	2
-engineers	2
-highest	2
-stand	2
-enough	2
-back	2
-just	2
-opposite	2
-lies	2
-moment	2
-immediately	2
-heavily	2
-drive	2
-buses	2
-predictable	2
-irregular	2
-arrive	2
-closely	2
-advertising	2
-argument	2
-dragon	2
-boat	2
-fifth	2
-fish	2
-eat	2
-nowadays	2
-races	2
-housing	2
-backgrounds	2
-couples	2
-close	2
-financial	2
-ten	2
-depression	2
-half	2
-note	2
-team	2
-clinics	2
-alongside	2
-authors	2
-professional	2
-pandemic	2
-passed	2
-cheaper	2
-lines	2
-lectures	2
-encouragement	2
-stopped	2
-proved	2
-institutions	2
-entered	2
-supermarket	2
-milk	2
-hundreds	2
-shelves	2
-supermarkets	2
-stores	2
-telemedicine	2
-smartphone	2
-four	2
-inventions	2
-papermaking	2
-printing	2
-gunpowder	2
-compass	2
-today	2
-national	2
-concentration	2
-third	2
-difficulties	2
-experiment	2
-successful	2
-kilometres	2
-director	2
-added	2
-six	2
-handwriting	2
-role	2
-letters	2
-remember	2
-creates	2
-growth	2
-container	2
-return	2
-restaurants	2
-single-use	2
-pay	2
-uncertainty	2
-communication	2
-rain	2
-mean	2
-clearer	2
-right	2
-dinner	2
-opinions	2
-part-time	2
-gained	2
-distraction	2
-line	2
-peace	2
-software	2
-anxious	2
-educators	2
-whatever	2
-performed	2
-ticket	2
-application	2
-relatives	2
-beyond	2
-poorer	2
-younger	2
-trains	2
-soon	2
-endless	2
-break	2
-admission	2
-crowded	2
-calligraphy	2
-art	2
-expression	2
-practise	2
-sense	2
-busy	2
-rest	2
-efficiency	2
-everyone	2
-class	2
-sum	2
-seen	2
-gain	2
-know	2
-organisers	2
-classic	2
-angry	2
-continuous	2
-grades	2
-rise	2
-serves	2
-fewer	2
-stay	2
-drink	2
-office	2
-people's	2
-friends	2
-expectation	2
-comfortable	2
-curriculum	2
-creative	2
-one's	2
-poems	2
-lot	2
-phantom	2
-jams	2
-intake	2
-pet	2
-middle	2
-performance	2
-interpersonal	2
-gift	2
-photograph	1
-opened	1
-photographed	1
-internet	1
-librarians	1
-digitisation	1
-annoyance	1
-long-term	1
-blood	1
-disturbed	1
-sudden	1
-activation	1
-cardiovascular	1
-immune	1
-authorities	1
-reduction	1
-expansion	1
-workforce	1
-independent	1
-contractors	1
-covered	1
-labour	1
-equipment	1
-rider	1
-injured	1
-loss	1
-insurance	1
-rumour	1
-surprise	1
-passing	1
-event	1
-incredible	1
-falsehoods	1
-emotional	1
-whereas	1
-corrections	1
-sober	1
-forward	1
-deleting	1
-idealism	1
-realism	1
-necessarily	1
+said	6	7
+lived	3	3
+alongside	2	2
+papermaking	2	2
+phantom	2	2
+default	1	2
+falsehoods	1	2
+halls	1	2
+happens	1	2
+internet	1	2
+interruptions	1	2
+long-term	1	2
+pens	1	2
+retailers	1	2
+self-control	1	2
+sellers	1	2
+suburban	1	2
+takeaway	1	2
+unused	1	2
+abdomen	1	1
+activation	1	1
+activists	1	1
+acupuncture	1	1
+adhere	1	1
+ai-assisted	1	1
+algorithm	1	1
+analects	1	1
+annoyance	1	1
+automatically	1	1
+behaviors	1	1
+belonged	1	1
+belongs	1	1
+bike-sharing	1	1
+bilateral	1	1
+boys	1	1
+caf	1	1
+calorie	1	1
+calories	1	1
+cardiovascular	1	1
+cards	1	1
+chatgpt	1	1
+childcare	1	1
+civilisation	1	1
+cleaver	1	1
+clip	1	1
+clips	1	1
+conservationists	1	1
+considerably	1	1
+contractors	1	1
+cooking	1	1
+counsellor	1	1
+cross-check	1	1
+cyclists	1	1
+day-night	1	1
+defenders	1	1
+digitisation	1	1
+doors	1	1
+dumpling	1	1
+effectiveness	1	1
+effortlessly	1	1
+eggs	1	1
+elective	1	1
+embarrassment	1	1
+enterprises	1	1
+entertainment	1	1
+evenings	1	1
+exhausts	1	1
+eyes	1	1
+fake	1	1
+fat	1	1
+fireworks	1	1
+forecasters	1	1
+foster	1	1
+full-time	1	1
+gift-giving	1	1
+grabar	1	1
+grammar-checking	1	1
+greetings	1	1
+hands-on	1	1
+happened	1	1
+happier	1	1
+hearing	1	1
+henry	1	1
+herbal	1	1
+high-speed	1	1
+hitchcock	1	1
+hunting	1	1
+hurried	1	1
+i'm	1	1
+idealism	1	1
+identities	1	1
+identity	1	1
+impostor	1	1
+impractical	1	1
+impulse	1	1
+inaccurate	1	1
+inadequate	1	1
+incense	1	1
+incredible	1	1
+injured	1	1
+inland	1	1
+intensifies	1	1
+interestingly	1	1
+intervened	1	1
+intuition	1	1
+invited	1	1
+irrational	1	1
+irreplaceable	1	1
+isolation	1	1
+kilograms	1	1
+knowing	1	1
+knows	1	1
+lecturers	1	1
+litre	1	1
+london	1	1
+lunar	1	1
+marathons	1	1
+massage	1	1
+math	1	1
+meant	1	1
+mid-life	1	1
+modernisation	1	1
+multiple-choice	1	1
+names	1	1
+nurseries	1	1
+nutritionists	1	1
+one-day	1	1
+opt	1	1
+organisms	1	1
+outdo	1	1
+over-investment	1	1
+overloaded	1	1
+painted	1	1
+painting	1	1
+pandas	1	1
+path	1	1
+pavements	1	1
+pedestrian-friendly	1	1
+perfection	1	1
+poaching	1	1
+politeness	1	1
+pollutants	1	1
+preferences	1	1
+presenters	1	1
+prioritize	1	1
+promoters	1	1
+prose	1	1
+proteins	1	1
+pushback	1	1
+queens	1	1
+rally	1	1
+rarity	1	1
+realism	1	1
+reasonably	1	1
+reciprocate	1	1
+reconsider	1	1
+recruitment	1	1
+rediscover	1	1
+regularity	1	1
+replay	1	1
+reporters	1	1
+resentment	1	1
+reunion	1	1
+risky	1	1
+sailors	1	1
+seabirds	1	1
+seafood	1	1
+settled	1	1
+shortcuts	1	1
+shouted	1	1
+sixty-five	1	1
+slate	1	1
+supersensitive	1	1
+supervision	1	1
+surrounding	1	1
+sweden	1	1
+symbolic	1	1
+tang	1	1
+ten-minute	1	1
+thanks	1	1
+theatres	1	1
+three-day	1	1
+unplannable	1	1
+unsure	1	1
+unsurprisingly	1	1
+warfare	1	1
+well-made	1	1
+whereas	1	1
+women	1	1
+wording	1	1
+york	1	1
+yuan	1	1
+zongzi	1	1
+loneliness	0	2
+strangers	0	2
+alert	0	1
+artists	0	1
+audio	0	1
+batteries	0	1
+biodegradable	0	1
+boxes	0	1
+buildings	0	1
+calligraphers	0	1
+cancelling	0	1
+capped	0	1
+cautiously	0	1
+charities	0	1
+collectors	0	1
+cooperation	0	1
+cross-cultural	0	1
+digitising	0	1
+dwellers	0	1
+ears	0	1
+execution	0	1
+fairness	0	1
+feelings	0	1
+forum	0	1
+graduation	0	1
+happening	0	1
+held	0	1
+highways	0	1
+incomplete	0	1
+informal	0	1
+irreversible	0	1
+journalism	0	1
+laziness	0	1
+loses	0	1
+meteorology	0	1
+nicer	0	1
+night-time	0	1
+nutritional	0	1
+obsolete	0	1
+offline	0	1
+operators	0	1
+organizations	0	1
+outdated	0	1
+overestimate	0	1
+overload	0	1
+overrides	0	1
+pension	0	1
+persistence	0	1
+procrastinate	0	1
+promotion	0	1
+redistribution	0	1
+refrigeration	0	1
+regaining	0	1
+residential	0	1
+restrictions	0	1
+rush-hour	0	1
+short-term	0	1
+shorten	0	1
+shortening	0	1
+shortens	0	1
+speakers	0	1
+tableware	0	1
+taught	0	1
+teenagers	0	1
+tourism	0	1
+toward	0	1
+transformers	0	1
+unaware	0	1
+uncritical	0	1
+urgency	0	1
+widening	0	1
+widens	0	1
+windows	0	1
+zoos	0	1

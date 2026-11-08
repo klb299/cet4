@@ -34,13 +34,40 @@ class Sentence:
         self.trans = ""
 
 
+# 语料来源：real = 可在公开来源核实的真题片段；sim = 按真题题材人工撰写的仿真语料；
+# import = 用户自己放进 data/import/ 的文本，来源未经核实。
+# 这个标记必须一路带到卡面上：工具叫「真题词汇」，而 2021-06 ~ 2024-06 这 8 个场次
+# 全是仿真语料（占全部词次的 86%）。不标的话，卡面上的「真题出现 6 次」
+# 其实是「仿真文里出现 6 次」，频次排序也变得不可信。
+SOURCE_NAME = {"real": "真题", "sim": "仿真", "import": "导入"}
+SOURCE_ORDER = {"real": 0, "sim": 1, "import": 2}
+
+
+def detect_source(raw, year=""):
+    """从文件头注释判断来源；没有线索时按年份约定兜底。
+
+    判定顺序有讲究：「仿真真题语料」这句话里同时含「仿真」和「真题」，
+    所以必须先查「仿真」，否则 8 个仿真场次会被判成真题。
+    """
+    head = raw[:1500]
+    if "仿真" in head:
+        return "sim"
+    if "真题" in head or "回忆版" in head or "考后整理" in head:
+        return "real"
+    m = re.match(r"^(\d{4})年", year or "")
+    if m:
+        # 与 data/2025-2026来源说明.md 的约定一致：2025 年起才存在可核实的真题片段
+        return "real" if int(m.group(1)) >= 2025 else "sim"
+    return "import"
+
+
 class Block:
     """一个题型块（一篇文章 / 一段听力材料 / 一篇翻译 / 一篇范文）。"""
 
     __slots__ = ("section", "title", "year", "set_name", "topic", "questions",
-                 "choices", "body", "sentences", "trans", "qtrans")
+                 "choices", "body", "sentences", "trans", "qtrans", "source")
 
-    def __init__(self, section, title, year, set_name, topic):
+    def __init__(self, section, title, year, set_name, topic, source="real"):
         self.section = section
         self.title = title
         self.year = year
@@ -52,21 +79,7 @@ class Block:
         self.sentences = []
         self.trans = []      # 与 sentences 按序对齐的中文译文
         self.qtrans = []     # 与 questions 按序对齐的题干译文
-
-    @property
-    def source(self):
-        return f"{self.year} {self.set_name} · {self.section} · {self.title}".strip(" ·")
-
-    def as_dict(self):
-        return {
-            "section": self.section,
-            "title": self.title,
-            "year": self.year,
-            "set": self.set_name,
-            "topic": self.topic,
-            "questions": self.questions,
-            "choices": self.choices,
-        }
+        self.source = source  # real / sim / import，见 SOURCE_NAME
 
 
 def split_sentences(text):
@@ -98,6 +111,10 @@ def parse_file(path):
     """解析单个语料文件，返回 Block 列表。"""
     with open(path, encoding="utf-8", errors="ignore") as f:
         raw = f.read()
+
+    # 文件级来源：头注释一句话决定整个文件。注释里没线索时（用户自己导入的
+    # 结构化文本），下面按块的首个场次年份兜底。
+    file_source = detect_source(raw)
 
     year, set_name = "", ""
     blocks = []
@@ -134,7 +151,9 @@ def parse_file(path):
                 section, title = head.split("|", 1)
             else:
                 section, title = head, head
-            cur = Block(section.strip(), title.strip(), year, set_name, "")
+            cur = Block(section.strip(), title.strip(), year, set_name, "",
+                        source=file_source if file_source != "import"
+                        else detect_source("", year))
             blocks.append(cur)
             mode = None
         elif s.startswith("@topic"):
@@ -179,7 +198,9 @@ def parse_plain_file(path):
         paras = [p.strip() for p in re.split(r"\n\s*\n", f.read()) if p.strip()]
     blocks = []
     for i, para in enumerate(paras, 1):
-        b = Block(section, f"第{i}篇", year, "导入素材", "")
+        # 用户扔进 data/import/ 的纯文本：来源无从核实，标 import 而不是 real，
+        # 免得它在卡面上冒充「真题原句」。
+        b = Block(section, f"第{i}篇", year, "导入素材", "", source="import")
         b.body = para
         b.sentences = [Sentence(s, j, b) for j, s in enumerate(split_sentences(para))]
         blocks.append(b)

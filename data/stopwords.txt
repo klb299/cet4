@@ -1,0 +1,50 @@
+# 不进「未收录词」清单的词
+#
+# 为什么需要这份表：真题里的英文词次有相当一部分根本不需要做卡片，
+# 但它们出现次数最高，一直霸占未收录清单的前排，把真正该补的词挤到后面看不见。
+# 补进 data/lexicon/ 的词不会出现在未收录清单里，这份表只管"不该补的"。
+#
+# 用法：core/extractor.py 记未收录词时跳过；core/exporters.py 出清单时也再滤一遍。
+# 一行一个或多个词，空格或换行分隔；# 开头是注释。
+
+## 1) 功能词：冠词、代词、系动词、情态动词、基础介词连词
+##    （注：see 从这里移出去了 —— "see off 送行 / see to it that 务必使"是
+##     四级常考搭配，当功能词滤掉反而少了考点，已补进 15_RestGap.txt）
+the and that but off soon little back big know right final false highest older
+main your my his her its our their this these those a an of to in on for with as at
+by from or if so not no nor yet word words
+is are was were be been being am do does did doing done will would can could shall
+should may might must have has had having
+
+## 2) 题干套话：四级题干的格式化用语，背它没用，出现次数却很高
+mainly passage passages essay essays exam exams exams' direction directions
+question questions following title statement paragraph infer implies suggests
+according writer's reader's
+
+## 3) 专有名词：语料里的人名地名，不用背
+skillman ventura alfred ave english
+
+## 4) 初中级已掌握词：出现次数不低，但做卡片没有学习价值
+##    （数字、最基础的时间/数量/方位词、人人都会的词形）
+enough everyone none whatever whose onto today just half middle moment mean
+live rest ten four five six one two three hundred thousand million
+hundreds thousands millions fifth fifty third first tomorrow yesterday
+part-time single-use
+
+## 5) 初中就已掌握的基础词：第三批补词库时从 678 个未收录词里挑出来的。
+##    它们几乎每篇都出现，却人人都会 —— 做卡片纯属浪费复习位。
+##    留在未收录清单里则会一直霸占前排，把真正该补的词挤到看不见的地方。
+above again agree alive afternoon among basket blood bowl box boy card clean
+coffee cook cup dead door earth eight eye fifteen friday hall hand here name
+nine sixty summer table telephone text upon doorstep boyfriend girlfriend
+morning evening tonight
+inside outside upstairs downstairs anybody somebody everybody
+quickly slowly quietly loudly carefully really very quite
+
+## 6) 人称代词：they / them / we / us / you / it —— 和上面第 1 类同理，
+##    出现次数霸榜（they 178 次排第一），但没有人会不认识它们。
+##    词库里也已移除对应条目，这里再挡一道，防止它们掉进未收录清单。
+they them we us you it cannot
+##    2026-11 对账时补：这四个人称代词同样只在语料里出现 1 次，
+##    做卡片没有价值，但一直挂在未收录清单上，挡着真正该补的词。
+she he him his me mine myself herself himself itself ourselves yourselves themselves oneself

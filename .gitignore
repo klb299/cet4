@@ -1,0 +1,12 @@
+# 旧目录：测试脚本已迁到 tests/，这里只剩历史截图
+.shots/
+
+# Python
+__pycache__/
+*.pyc
+
+# 构建产物里的中间文件（output/ 本身要跟着仓库走，GitHub Pages 直接用它）
+output/*.tmp
+
+# 大体积工具产物（抓取脚本可重新生成）
+.tools/__pycache__/

@@ -3,6 +3,7 @@
 # 而是搭配：take part in / make sure / give up / keep in touch 之类。
 # 格式：单词|词性|义项(;分隔,*为常考义)|等级|搭配提示
 
+# 注：are / is / was / were / of / to / can / should 这类纯虚词已从词库移出 —— stopwords.txt 早就判定它们"做卡片没有学习价值"，留着只会让首页前几张卡变成 they / are。 前四个会经 IRREGULAR_PAIRS 折回 be，不漏词。
 make|v.|*使得,让;做,制造;成为;构成|A|make sure 确保
 take|v.|*拿,取;花费(时间);乘坐;接受|A|take part in 参加
 give|v.|*给,提供;产生;让步|A|give up 放弃
@@ -59,8 +60,4 @@ some|adj./pron.|*一些;某个;大约|A|some day 有一天
 any|adj./pron.|*任何的;一些;丝毫|A|in any case 无论如何
 no|adj./adv.|*没有;不是;一点也不|A|no longer 不再
 one|num./pron.|*一个;某个;人们|A|one by one 一个接一个
-two|num.|*二;两个|A|—
-three|num.|*三;三个|A|—
-five|num.|*五;五个|A|—
 thousand|num./n.|*一千;成千上万|A|thousands of 成千上万的
-millions|n.|*数百万;大量|A|millions of 数百万的

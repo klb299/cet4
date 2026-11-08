@@ -1,6 +1,6 @@
 # 格式：单词|词性|义项(用;分隔，带*者为四级常考义)|等级(A基础 B核心 C进阶)|搭配/派生提示
 abandon|v.|*放弃,中止;抛弃,遗弃;陷入(某种情绪)|B|abandon oneself to 沉溺于
-ability|n.|*能力,才能|ability to do 做…的能力
+ability|n.|*能力,才能|A|ability to do 做…的能力
 absence|n.|*缺席,不在;缺乏|A|in the absence of 在缺乏…的情况下
 absolutely|adv.|*绝对地,完全地|A|
 absorb|v.|*吸收;使全神贯注;承担(费用)|B|be absorbed in 专心于

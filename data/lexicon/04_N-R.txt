@@ -27,7 +27,7 @@ occasion|n.|*场合,时刻;时机;原因|A|on occasion 有时
 occupy|v.|*占据;占用;使忙于;居住|B|be occupied with 忙于
 occur|v.|*发生;出现;想起|A|occur to sb 某人想到
 odd|adj.|*奇怪的;奇数的;临时的;剩余的|A|odd jobs 零工
-offend|v.|*冒犯,得罪;违犯|be offended by 被…冒犯
+offend|v.|*冒犯,得罪;违犯|B|be offended by 被…冒犯
 offer|v./n.|*提供;提出;报价;主动提议|A|offer to do 主动提出做
 official|n./adj.|*官员;官方的,正式的|A|official language 官方语言
 offset|v./n.|*抵消,弥补;补偿|C|offset the cost 抵消成本
@@ -116,7 +116,7 @@ premise|n.|前提;premises 经营场所;房屋连地基|C|on the premise that �
 premium|n./adj.|*额外费用;保险费;优质的|C|
 prepare|v.|*准备,预备;配制|A|prepare for 为…做准备
 prescribe|v.|*开(药方);规定,指示|C|prescribe medicine 开药
-present|n./adj./v.|*礼物;目前;出席的;现在的;呈现;提出;颁发|A|at present 目前
+present|n./adj./v.|*礼物;目前,现在;出席的;呈现;提出,颁发|A|at present 目前
 preserve|v./n.|*保护,保存;腌制;禁猎区|B|preserve the tradition 保护传统
 press|v./n.|*压,按;催促;新闻界;出版社;印刷机|A|press for 迫切要求
 pressure|n./v.|*压力;压迫;施加压力|A|under pressure 处于压力下
@@ -163,7 +163,6 @@ propose|v.|*提议,建议;打算;求婚|B|propose that 建议(虚拟语气)
 prospect|n.|*前景,前途;可能性;景象;勘探|B|job prospects 就业前景
 protect|v.|*保护,防护|A|protect sb from 保护某人免受
 protest|n./v.|*抗议,反对;坚决主张|B|protest against 抗议
-provided|conj.|*假如,只要|B|provided that 只要
 province|n.|*省;领域,范围|A|
 provision|n.|*供应;条款,规定;准备|B|make provision for 为…做准备
 provoke|v.|*激起,引起;激怒,挑衅|C|provoke a reaction 引起反应
@@ -239,7 +238,7 @@ remote|adj.|*偏远的;遥远的;细微的;远程的|B|remote area 偏远地区
 remove|v.|*移走,去掉;脱下;免职;搬家;消除|A|remove from 从…移除
 render|v.|*使成为,致使;给予;翻译;表演|C|render sth useless 使…无用
 renew|v.|*更新;续借;重新开始;使恢复|B|renew energy 恢复精力
-rent|n./v.|*租金;租用,出租;租借;地租;房租;裂缝;撕裂|A|rent an apartment 租公寓
+rent|n./v.|*租金,房租;租用,出租;租借;地租;撕裂|A|rent an apartment 租公寓
 repair|n./v.|*修理,修补;修复;弥补|A|under repair 在修理中
 repeat|v./n.|*重复;重说;重做;重播|A|repeat after 跟读
 replace|v.|*取代,替换;更换;把…放回原处|A|replace A with B 用B替换A

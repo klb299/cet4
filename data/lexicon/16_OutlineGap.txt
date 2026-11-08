@@ -1,0 +1,164 @@
+# 第四批补词：语料里真出现过、大纲也要求、前面 15 册都没收的词
+#
+# 来源不是拍脑袋：跑 `.tools/reconcile_outline.py`，把「语料中出现过」
+# 与 `data/reference/cet4_outline.txt`（第三方整理的 4427 词表）求交集，
+# 再减掉词库已有的，剩下的就是这批。
+#
+# 为什么这批非补不可：前 15 册是「看未收录清单逐个补」长出来的，
+# 补到出现 1 次就停，于是 basic / complete / finish / happen / bread / key
+# 这种最该在的词反而一直漏着 —— 而它们在大纲里是实打实要求掌握的。
+#
+# 下列几类刻意没进本册，改记进 data/stopwords.txt：
+#   · 纯人称代词 she / himself / ourselves / oneself（做卡片没有学习价值）
+#   · 专有名词 english
+#
+# 等级判定：基础实词进 A（370 分档先背这批），语义偏抽象或派生词进 B。
+#
+basic|adj.|*基本的,基础的;根本的|A|basic skills 基本技能
+bread|n.|*面包;生计|A|earn one's bread 谋生
+complete|adj./v.|*完整的;彻底的;完成,结束|A|complete with 连同
+extra|adj./adv.|*额外的;特别地|A|extra charge 额外收费
+key|n./adj.|*钥匙;关键;答案;关键的|A|key to …的关键
+model|n./v.|*模型;模式;模范;模特儿|A|role model 榜样
+neither|adj./pron./conj.|*两者都不;既不…也不|A|neither...nor 既不…也不
+pollution|n.|*污染|A|air pollution 空气污染
+suit|n./v.|*套装,西装;适合;诉讼|A|suit one's needs 满足需要
+beautiful|adj.|*美丽的;出色的|A|—
+bill|n.|*账单;法案;钞票|A|pay the bill 买单
+borrow|v.|*借入,借用|A|borrow from 向…借
+comfort|n./v.|*舒适;安慰;抚慰|A|in comfort 舒适地
+cover|v./n.|*覆盖;包括;报道;封面|A|cover up 掩盖
+drum|n.|*鼓;鼓状物|A|beat the drum 鼓吹
+else|adv.|*其他,另外;否则|A|or else 否则
+especially|adv.|*尤其,特别|A|—
+event|n.|*事件;活动;赛事|A|in the event of 万一
+everywhere|adv.|*到处,处处|A|—
+fact|n.|*事实;实际|A|in fact 事实上
+fast|adj./adv.|*快的;牢固的;快速地|A|hold fast 抓紧
+forward|adv./adj./v.|*向前;今后的;转发|A|look forward to 期待
+future|n./adj.|*将来;前途;未来的|A|in the future 将来
+game|n.|*游戏;比赛;猎物|A|—
+guide|n./v.|*向导;指南;引导|A|guide book 指南
+head|n./v.|*头;首领;朝…前进|A|head for 前往
+heat|n./v.|*热;高温;加热|A|—
+host|n./v.|*主人;东道主;主办|A|host country 主办国
+illness|n.|*疾病|A|mental illness 精神疾病
+knife|n.|*刀|A|—
+land|n./v.|*陆地;土地;着陆|A|—
+lazy|adj.|*懒惰的,懒散的|A|—
+let|v.|*让,允许;出租|A|let alone 更不用说
+list|n./v.|*清单,目录;列出|A|—
+magazine|n.|*杂志,期刊|A|—
+march|n./v.|*行军,游行;三月|A|on the march 在行进中
+match|n./v.|*比赛;火柴;相配|A|match up to 比得上
+midnight|n.|*午夜|A|at midnight 在午夜
+mind|n./v.|*头脑;介意;注意|A|never mind 没关系
+movie|n.|*电影|A|—
+ought|aux.|*应当,应该|A|ought to 应该
+photograph|n./v.|*照片;拍照|A|take a photograph 拍照
+play|v./n.|*玩;演奏;扮演;戏剧|A|play a role 起作用
+poet|n.|*诗人|A|—
+red|adj./n.|*红色的;红色|A|in the red 亏损
+run|v./n.|*跑;经营;运转|A|run out of 用完
+salt|n.|*盐|A|take with a grain of salt 半信半疑
+sir|n.|*先生,阁下|A|—
+spring|n./v.|*春天;泉水;弹簧;跳跃|A|—
+television|n.|*电视;电视机|A|—
+afraid|adj.|*害怕的;担心的|A|be afraid of 害怕
+examination|n.|*考试;检查|A|—
+listen|v.|*听;听从|A|listen to 听
+put|v.|*放;表达;使处于|A|put off 推迟
+true|adj.|*真的;忠实的;准确的|A|come true 实现
+abroad|adv.|*在国外;到国外|A|go abroad 出国
+action|n.|*行动;作用;诉讼|A|take action 采取行动
+asleep|adj.|*睡着的|A|fall asleep 睡着
+breakfast|n.|*早餐|A|—
+childhood|n.|*童年|A|—
+countryside|n.|*乡村,农村|A|—
+dangerous|adj.|*危险的|A|—
+date|n./v.|*日期;约会;过时|A|up to date 最新的
+fair|adj./n.|*公平的;相当的;集市|A|fair enough 有道理
+finish|v./n.|*完成,结束;结束|A|finish off 完成
+freedom|n.|*自由;自主|A|freedom of speech 言论自由
+heart|n.|*心;内心;核心|A|by heart 记住
+law|n.|*法律;法则;定律|A|by law 依法
+mistake|n./v.|*错误;误解|A|by mistake 错误地
+ready|adj.|*准备好的;愿意的|A|be ready to 准备做
+round|adj./n./prep.|*圆的;一轮;围绕|A|round the clock 昼夜不停
+sport|n.|*运动;体育|A|—
+street|n.|*街道|A|—
+wild|adj.|*野生的;疯狂的|A|in the wild 在野外
+attribute|v./n.|*把…归因于;属性,特征|B|attribute A to B 把A归因于B
+core|n./adj.|*核心,要点;果核;核心的|B|at the core of 在…的核心
+deepen|v.|*加深;深化|B|—
+eve|n.|*前夜,前夕|B|on the eve of 在…前夕
+emotional|adj.|*情感的;情绪激动的|B|emotional support 情感支持
+fearful|adj.|*害怕的;可怕的|B|be fearful of 害怕
+filter|v./n.|*过滤;滤器|B|filter out 滤除
+fleet|n.|*舰队;车队,机群|B|a fleet of 一队
+fortunately|adv.|*幸运地,幸亏|B|—
+honesty|n.|*诚实,正直|B|in all honesty 说实话
+intellectual|adj./n.|*智力的;知识分子|B|intellectual property 知识产权
+intensity|n.|*强度;强烈|B|—
+interfere|v.|*干涉,干预;妨碍|B|interfere with 妨碍
+log|n./v.|*原木;日志;记录|B|log in 登录
+lump|n.|*块,团;肿块|B|a lump of 一块
+misunderstand|v.|*误解,曲解|B|—
+poisonous|adj.|*有毒的;有害的|B|—
+protection|n.|*保护;防护|B|protection against 防止
+sober|adj.|*清醒的;冷静的|B|—
+throughout|prep./adv.|*遍及;自始至终|B|throughout the year 全年
+unbearable|adj.|*难以忍受的|B|—
+unlucky|adj.|*不幸的;不吉利的|B|—
+gap|n.|*缺口;差距;间隔|B|generation gap 代沟
+acceptable|adj.|*可接受的,合意的|B|—
+alphabet|n.|*字母表|B|—
+attraction|n.|*吸引力;景点|B|tourist attraction 景点
+canteen|n.|*食堂;小卖部|B|—
+conservation|n.|*保护;节约|B|energy conservation 节能
+crime|n.|*罪行;犯罪|B|commit a crime 犯罪
+enthusiastic|adj.|*热情的,热心的|B|be enthusiastic about 热衷于
+equality|n.|*平等;相等|B|—
+fashion|n.|*时尚;方式|B|in fashion 流行
+immediate|adj.|*立即的;直接的|B|—
+industrial|adj.|*工业的;产业的|B|—
+investment|n.|*投资;投入|B|—
+length|n.|*长度;一段时间|B|at length 最终
+nearby|adj./adv.|*附近的;在附近|B|—
+necessity|n.|*必要性;必需品|B|of necessity 必然地
+production|n.|*生产;产量;作品|B|—
+unfair|adj.|*不公平的,不公正的|B|—
+youth|n.|*青春;青年|B|—
+
+# ── 原形补位 ──────────────────────────────────────────────
+# 下面这些词在语料里只以复数/过去式出现，于是当时的补词把它们整条收了进来，
+# 原形反而没有（词库有 minutes 却没有 minute，reader 还会被 _reduce 折成 read）。
+# 补原形、删变形，卡片才落在该落的词上。
+minute|n.|*分钟;一会儿;会议记录|A|in a minute 立刻
+million|num./n.|*百万|A|millions of 数百万的
+reader|n.|*读者;读物|A|—
+owner|n.|*物主,所有者|A|the owner of …的主人
+doctor|n.|*医生;博士|A|see a doctor 看医生
+driver|n.|*司机;驾驶者|A|—
+tree|n.|*树|A|—
+critic|n.|*批评家,评论家|B|—
+regulation|n.|*规章,规则;管理|B|rules and regulations 规章制度
+
+# ── 派生词的原形 ──────────────────────────────────────────
+# 卡片里有 absence / actually / equality 这些派生词，词库却没有 absent / actual / equal。
+# 补上原形，词族才连得起来（careful 能连到 care，equality 才连得回 equal）。
+# early ← ear 是词源巧合、不是同一族，所以 ear 没补。
+absent|adj.|*缺席的;不在意的|B|be absent from 缺席
+actual|adj.|*实际的,真实的|A|in actual fact 实际上
+elder|adj./n.|*年长的;长辈|B|elder brother 哥哥
+equal|adj./v.|*相等的;平等的;等于|B|be equal to 等于
+evident|adj.|*明显的,显然的|B|it is evident that 显然
+final|adj./n.|*最后的;决赛;期末考试|A|final decision 最终决定
+fortunate|adj.|*幸运的|B|be fortunate to 有幸
+frank|adj.|*坦白的,直率的|B|to be frank 坦白说
+ignorant|adj.|*无知的;不知道的|B|be ignorant of 不知道
+ill|adj.|*生病的;坏的|A|fall ill 生病
+instant|adj./n.|*立即的;瞬间|B|in an instant 立刻
+intelligent|adj.|*聪明的,有智力的|A|intelligent life 智慧生命
+poison|n./v.|*毒药;毒害|B|—
+rough|adj.|*粗糙的;大致的;艰难的|B|rough estimate 粗略估计

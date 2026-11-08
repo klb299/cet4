@@ -2,20 +2,20 @@
 stability|n.|*稳定,稳固;稳定性|A|social stability 社会稳定
 statistic|n./adj.|*统计数字,统计资料;统计学|B|official statistics 官方统计
 straightforward|adj.|*简单的,易懂的;坦率的|B|a straightforward answer 直截了当的回答
-stream|n./v.|*小河,溪流;流,一股;潮流;流动;流出;飘扬;按能力分班|A|a stream of 一连串
+stream|n./v.|*小河,溪流;流,一股;潮流;流动,流出;按能力分班|A|a stream of 一连串
 strength|n.|*力量,力气;强度;长处;实力;人数优势|A|strengths and weaknesses 优缺点
 stressful|adj.|*压力重的,紧张的|A|stressful job 压力大的工作
 stride|n./v.|*大步;步幅;进展;迈大步走;跨越|B|make strides 取得进展
-stroke|n./v.|*中风;击打;划水;一笔,一画;抚摸;敲响;划(船);轻抚|B|have a stroke 中风
+stroke|n./v.|*中风;击打;划水,划(船);一笔,一画;抚摸|B|have a stroke 中风
 studio|n.|*工作室,录音室;摄影棚;画室;电影制片厂|B|film studio 电影制片厂
 subjective|adj.|*主观的;主语的|C|subjective view 主观看法
 submit|v.|*提交,呈递;屈服,服从;认为,建议|B|submit an application 提交申请
-subordinate|adj./n./v.|*下级的;次要的;部下;使居于次要地位|be subordinate to 从属于
+subordinate|adj./n./v.|*下级的;次要的;部下;使居于次要地位|C|be subordinate to 从属于
 subscribe|v.|*订阅;订购;同意,赞成;捐款;认购|B|subscribe to 订阅/同意
 succeed|v.|*成功;继承;接着发生;继任|A|succeed in doing 成功做成
 success|n.|*成功,成就;成功的人或事|A|achieve success 取得成功
 successive|adj.|*连续的,接连的;依次的|B|successive years 连年
-suicide|n./adj./v.|*自杀;自杀行为;自杀性的;自杀|B|commit suicide 自杀
+suicide|n./adj./v.|*自杀;自杀行为;自杀性的|B|commit suicide 自杀
 summarize|v.|*总结,概括,概述|B|summarize the findings 总结发现
 summit|n./v.|*峰会,首脑会议;山顶,顶点;最高级;参加峰会;达到顶点|B|summit meeting 峰会
 superb|adj.|*极好的,一流的;杰出的,出色的|B|superb performance 出色的表现
@@ -25,9 +25,9 @@ surgery|n.|*外科手术;外科诊所;门诊时间;手术室;手术|B|undergo su
 survival|n.|*生存,存活;幸存;残存物;遗风|A|survival rate 存活率
 swallow|v./n.|*吞下,咽下;忍受;吞没;燕子;吞,咽;一次吞咽的量|B|swallow up 吞没
 swear|v./n.|*发誓,宣誓;诅咒,骂人;保证;宣誓;诅咒,骂人话|B|swear to do 发誓做
-sweat|n./v./adj.|*汗水,汗;出汗;流汗;苦差事;出汗;流汗;焦灼;苦干;出汗的|A|sweat heavily 大汗淋漓
+sweat|n./v./adj.|*汗水,汗;出汗,流汗;苦差事;苦干|A|sweat heavily 大汗淋漓
 swift|adj./n./adv.|*迅速的,快的;敏捷的;立刻的;雨燕;迅速地;敏捷地|B|swift action 迅速行动
-swing|n./v./adj.|*摇摆,摆动;秋千;改变,转向;挥动;摆动;转身;改变(意见);摇摆的|A|swing from …to 从…转向
+swing|n./v./adj.|*摇摆,摆动;秋千;改变,转向;挥动|A|swing from …to 从…转向
 symptom|n.|*症状;征兆,表征|B|symptom of …的症状
 tactic|n./adj.|*策略,手法;战术;兵法;招数;手段;战术的;策略的|B|tactics for …的策略
 tailor|n./v.|*裁缝;裁缝店;使适应,量身打造;定制;缝制;做裁缝|B|tailor to 针对…定制
@@ -37,40 +37,40 @@ tenant|n./v.|*租户,房客;佃户;承租人;占用者;租借,租用|C|tenant fa
 textile|n./adj.|*纺织品;纺织业;纺织原料;纺织的;织物的|B|textile industry 纺织业
 thirst|n./v.|*口渴;渴望,渴求;干渴;热望;渴;渴望;口渴的感觉|B|thirst for 渴望
 thoughtful|adj.|*体贴的,关心别人的;深思的,思考的;周到的;缜密思考的;沉思的|A|thoughtful gesture 体贴的举动
-thread|n./v.|*线,细线;线索,思路;螺纹;穿过,穿行;穿线于;用线串起;给…装入;穿过|A|thread through 穿过
-threshold|n.|*门槛;门口;起点,开端;临界值;入门;起始点;阈限;界限|C|threshold of …的开端
-throat|n./v.|*喉咙,咽喉;嗓子;嗓音;颈前部;用喉音说;用沙哑的声音说;开沟于;割喉|A|sore throat 喉咙痛
+thread|n./v.|*线,细线;线索,思路;螺纹;穿过,穿行|A|thread through 穿过
+threshold|n.|*门槛;起点,开端;临界值,阈限|C|threshold of …的开端
+throat|n./v.|*喉咙,咽喉;嗓子,嗓音;用喉音说;颈前部|A|sore throat 喉咙痛
 thumb|n./v.|*拇指;(手套的)拇指部分;竖起拇指要求搭车;翻阅;用拇指翻;以拇指拨弄;示意要求搭车|A|thumb through 翻阅
-thunder|n./v.|*雷,雷声;轰隆声;怒喝;打雷;发出雷鸣般声响;轰隆地响;怒喝;大声斥责|A|thunder and lightning 雷电
+thunder|n./v.|*雷,雷声;轰隆声;打雷;怒喝,大声斥责|A|thunder and lightning 雷电
 thus|adv.|*因此,所以;如此,这样;到如此程度;于是;以此方式;像这样|A|thus far 迄今为止
 tighten|v.|*使变紧,绷紧;加紧,加强;使更加严格;变紧;拉紧;收紧;变僵硬|A|tighten up 加强/拉紧
 timely|adj./adv.|*及时的,适时的;合时宜的;适时地;及时地|B|timely warning 及时的警告
 token|n./adj.|*代币,代金券;象征,标志;记号;纪念品;象征性的;敷衍的;作为标记的|B|token gesture 象征性姿态
 tolerance|n.|*容忍,宽容;忍耐力,耐受性;耐药量;公差;宽容度|B|tolerance for 对…的容忍
-toll|n./v.|*通行费,过路费;伤亡人数;损失,代价;钟声;收费;敲钟;鸣钟;抽取;缓慢而有规律地敲|B|take a toll on 对…造成损失
-torture|n./v.|*拷打,折磨;拷问;痛苦,苦恼;折磨;使痛苦;拷打;使苦恼;歪曲|B|torture sb into 折磨某人使其
+toll|n./v.|*通行费,过路费;伤亡人数;损失,代价;钟声;敲钟,鸣钟|B|take a toll on 对…造成损失
+torture|n./v.|*拷打,折磨;拷问;痛苦,苦恼;使痛苦|B|torture sb into 折磨某人使其
 toss|v./n.|*扔,抛,掷;甩动;颠簸;辗转反侧;掷币决定|A|toss and turn 辗转反侧
-total|adj./n./v./adv.|*总的,全部的;彻底的;完全;总数,总额;合计,总数;总数达,合计;完全地;总共地|A|in total 总共
-tow|v./n.|*拖,拉,牵引;拖曳;牵引;拖车;被拖的车辆;拖;牵引;拖拽;麻纤维|C|tow away 拖走
+total|adj./n./v./adv.|*总的,全部的;彻底的;总数,总额;合计,总数达|A|in total 总共
+tow|v./n.|*拖,拉,牵引;拖曳;拖车,被拖的车辆;麻纤维|C|tow away 拖走
 toxic|adj./n.|*有毒的,中毒的;有害的;恶毒的;毒药;有毒物质|C|toxic waste 有毒废物
 tragic|adj.|*悲惨的,不幸的;悲剧的;悲痛的;可悲的;悲剧性的|B|tragic accident 悲惨事故
 transient|adj./n.|*短暂的,转瞬即逝的;临时的;流动性的;暂住的旅客;瞬变现象|C|transient population 流动人口
 triumph|n./v.|*胜利,成功;巨大的成就;狂喜;获胜,击败;成功;欢欣鼓舞;庆祝胜利|B|triumph over 战胜
-trim|v./adj./n.|*修剪,修整;削减,缩减;装饰,点缀;整齐的,整洁的;苗条的;修剪;装饰;健康状况;点缀物|B|trim costs 削减成本
-troop|n./v.|*军队,部队;一群,一队;骑兵队;童子军中队;成群结队而行;列队前进;集结;分发|B|troops of 成群的
+trim|v./adj./n.|*修剪,修整;削减,缩减;装饰,点缀;整齐的,整洁的;苗条的|B|trim costs 削减成本
+troop|n./v.|*军队,部队;一群,一队;成群结队而行;列队前进|B|troops of 成群的
 turmoil|n.|*混乱,骚动;动乱;混乱状态;焦虑;不安;骚乱|C|in turmoil 处于混乱中
-underground|adj./n./adv.|*地下的;秘密的,隐蔽的;地铁;地下组织;地道;在地下;秘密地,暗中地;在地下进行|A|underground railway 地铁
+underground|adj./n./adv.|*地下的;秘密的,隐蔽的;地铁;地下组织|A|underground railway 地铁
 underlying|adj.|*根本的,潜在的;表面下的;在下面的;基础的;隐含的|C|underlying cause 根本原因
-underestimate|v./n.|*低估,看轻;估计不足;低估;轻视;估计不足|B|underestimate the cost 低估成本
+underestimate|v./n.|*低估,看轻;估计不足;轻视|B|underestimate the cost 低估成本
 unhealthy|adj.|*不健康的,有病的;有害健康的;不良的;危险的;反常的|A|unhealthy diet 不健康的饮食
 union|n.|*工会,协会;联盟,联合;联邦;结合,合并;和谐,一致|A|trade union 工会
-unite|v.|*联合,团结;统一,合并;使团结;使联合;使结合;粘合;兼备;协力|A|unite against 联合反对
+unite|v.|*联合,团结;统一,合并;使结合|A|unite against 联合反对
 unity|n.|*团结,统一;一致,协调;整体,统一体;单一,统一性;和谐;个体|B|national unity 国家统一
 unlikely|adj.|*不太可能的,未必的;未必发生的;不像是真的;难以置信的|A|be unlikely to 不太可能
 upload|v./n.|*上传,上载;加载;上传的数据;上载的文件;上传行为;上载量|B|upload files 上传文件
-upright|adj./adv./n.|*直立的,竖直的;正直的,诚实的;垂直地;竖立着;笔直地;竖立物,直立柱;垂直状态|B|upright posture 直立姿势
-upward|adj./adv.|*向上的,上升的;朝上的;向上地,上升地;以上;向上;上涨;向上游;向内地;更多|A|upward trend 上升趋势
-utility|n./adj.|*功用,效用;实用;公用事业;实用程序;有用的;实用的;通用的|B|public utility 公用事业
+upright|adj./adv./n.|*直立的,竖直的;正直的,诚实的;笔直地;竖立物,直立柱|B|upright posture 直立姿势
+upward|adj./adv.|*向上的,上升的;向上地,上升地;以上|A|upward trend 上升趋势
+utility|n./adj.|*功用,效用;公用事业;实用的;实用程序|B|public utility 公用事业
 utilize|v.|*利用,使用;运用;应用;借助;发挥;使有用;利用…来做|B|utilize resources 利用资源
 vain|adj.|*徒劳的,无效的;自负的,虚荣的;空虚的;无意义的;自视过高的;无用的;愚蠢的|B|in vain 徒劳地
 vegetation|n.|*植被,植物;草木;植物群落;生长;赘疣;赘生物;营养体生长|C|natural vegetation 天然植被
@@ -78,22 +78,22 @@ venue|n.|*会场,举办地点;集合地点;体育比赛场所;犯罪地点|C|ven
 verbal|adj./n.|*口头的,非书面的;言语的,文字的;动词的;口述的;动词的非谓语形式;口头表达;言语|B|verbal agreement 口头协议
 verge|n./v.|*边缘,边界;极限;临界点;濒于,接近|C|on the verge of 濒于
 virtual|adj.|*实际上的,事实上的;虚拟的,模拟的;几乎的;实质上的;有效的;虚的;可能的|B|virtual reality 虚拟现实
-visa|n./v.|*签证;签名,背书;维萨信用卡;签发签证;办理签证;给…背签;签证;鉴证;签证手续|B|apply for a visa 申请签证
+visa|n./v.|*签证;签发签证;签名,背书|B|apply for a visa 申请签证
 void|n./adj./v.|*空虚,空白;空间;无效的;空的;使无效|C|void of 缺乏
-warmth|n.|*温暖,暖和;热情,友好;激动;生气;温情;温暖的感觉;暖意;亲切;热心|A|the warmth of …的温暖
+warmth|n.|*温暖,暖和;热情,友好;温情,亲切|A|the warmth of …的温暖
 warning|n./adj./v.|*警告,警示;警报;预告;告诫;警告的,告诫的;预先通知|A|warning sign 警告标志
-whatsoever|adv.|*丝毫,任何,无论什么;根本;无论如何;一点也不;任何事物;无论如何;全然;究竟什么|B|none whatsoever 一点也没有
+whatsoever|adv.|*丝毫,任何,无论什么;根本,一点也不;究竟什么|B|none whatsoever 一点也没有
 whichever|pron./adj.|*无论哪个,无论哪些;任何一个;不管哪些;无论何者;任选一个;无论哪个的;无论哪些的|B|whichever you like 你喜欢的任何一个
 whisper|v./n.|*低语,耳语;私语;密谈;沙沙作响;传闻|B|whisper to 对…耳语
 whistle|n./v.|*口哨;哨子;汽笛;吹口哨;鸣笛;呼啸而过|A|blow a whistle 吹哨
 whole|adj./n.|*完整的,全部的;整个的;所有的;整体|A|on the whole 总的来说
-wholly|adv.|*完全地,全部地;整体上;一概;统统;十足;彻底地;整个地;全然;全面地|B|wholly owned 全资的
-widespread|adj.|*普遍的,广泛的;分布广的;蔓延的;流传甚广的;大面积的;广为流传的;普及的;广阔的|A|widespread use 广泛使用
+wholly|adv.|*完全地,全部地;整体上,整个地;彻底地|B|wholly owned 全资的
+widespread|adj.|*普遍的,广泛的;分布广的,蔓延的|A|widespread use 广泛使用
 wheel|n./v.|*轮子,车轮;方向盘;转动;推动;盘旋|A|behind the wheel 驾驶
 willing|adj./v.|*愿意的,乐意的;自愿的;积极肯干的;情愿的;自愿提供|A|be willing to 愿意
 wisdom|n.|*智慧,才智;明智;知识,学问;格言|A|conventional wisdom 传统观念
 withdraw|v.|*撤退,撤离;撤回;取款;收回;退出;戒毒|B|withdraw money 取钱
-withhold|v.|*拒绝给予;扣留;抑制;隐瞒;阻挡;保留;忍住;克制;扣缴|C|withhold information 隐瞒信息
+withhold|v.|*拒绝给予;扣留;抑制,忍住;隐瞒|C|withhold information 隐瞒信息
 within|prep.|*在…之内;在…里面;不超过;在内部|A|within reach 在够得着的范围内
 without|prep.|*没有,无;在没有…的情况下;如果不|A|without doubt 毫无疑问
 withstand|v.|*承受,经受住;抵住;顶住;经得起|C|withstand pressure 承受压力
@@ -101,10 +101,10 @@ witness|n./v.|*目击者,见证人;证据,证词;目击,目睹;作证|A|witness 
 workload|n.|*工作量,工作负担;工作负荷;任务量;作业量;负荷;工作的量;劳动负荷|B|heavy workload 繁重的工作量
 worship|v./n.|*崇拜,敬仰;做礼拜;礼拜;崇敬|B|worship of 对…的崇拜
 worth|adj./n.|*值得的,有…价值的;价值;财产;效用|A|be worth doing 值得做
-worthwhile|adj.|*值得做的,值得花时间的;有价值的;有用的;合算的;值得的;有益的;值得花时间的;值得努力的|B|worthwhile effort 值得的努力
-worthy|adj./n.|*值得的,应得的;有价值的;可敬的;配得上的;杰出人物;知名人士|be worthy of 值得|
-wound|n./v.|*伤,伤口;创伤;伤害;痛苦;使受伤;打伤;伤害感情;缠绕;损伤|A|wound up 结束/紧张
-wrap|v./n.|*包,裹;缠绕;覆盖;掩饰;围巾;披肩;包装材料|A|wrap up 包好/结束
+worthwhile|adj.|*值得做的,值得花时间的;有价值的;合算的|B|worthwhile effort 值得的努力
+worthy|adj./n.|*值得的,应得的;有价值的;可敬的;配得上的;杰出人物;知名人士|A|be worthy of 值得
+wound|n./v.|*伤,伤口;创伤,痛苦;使受伤,打伤;伤害感情;缠绕(wind 的过去式)|A|wound up 结束/紧张
+wrap|v./n.|*包,裹;缠绕;覆盖;围巾,披肩;包装材料|A|wrap up 包好/结束
 wreck|n./v.|*失事,遇难;残骸;破坏;使失事;拆毁|B|wreck the plan 破坏计划
 wrong|adj./adv./n.|*错误的,不正确的;不道德的;有毛病的;错误地;不公正;冤枉|A|go wrong 出错
 yield|v./n.|*产生,出产;屈服,让步;放弃;让出;产量,收益|A|yield to 屈服于

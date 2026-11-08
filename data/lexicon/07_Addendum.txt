@@ -1,7 +1,7 @@
 # 格式：单词|词性|义项(用;分隔，带*者为四级常考义)|等级(A基础 B核心 C进阶)|搭配/派生提示
 image|n.|*形象;图像;印象;比喻|A|public image 公众形象
 ban|n./v.|*禁令;禁止,取缔|B|ban sb from doing 禁止某人做
-carry|v.|*携带;搬运;传播;支撑;具有;刊登;怀(孕)|A|carry out 执行,实施
+carry|v.|*携带,搬运;传播;支撑;具有;刊登|A|carry out 执行,实施
 hour|n.|*小时;时间,时刻;课时;固定时间|A|rush hour 高峰时段
 find|v./n.|*找到;发现;认为;感到;裁决;发现物|A|find out 查明
 share|v./n.|*分享,共享;分担;股份;份额;一份|A|share sth with 与…分享
@@ -18,9 +18,9 @@ modernize|v.|*使现代化,现代化;采用新方法|B|modernize the system 使�
 repetitive|adj.|*重复的,反复的;单调乏味的|C|repetitive task 重复性任务
 medical|adj./n.|*医学的,医疗的;内科的;体检;医生;病历|A|medical care 医疗护理
 assistant|n./adj.|*助手,助理;助教;店员;辅助的;助理的|A|teaching assistant 助教
-conscience|n.|*良心,良知;内疚;道德心|a clear conscience 问心无愧
+conscience|n.|*良心,良知;内疚;道德心|B|a clear conscience 问心无愧
 ignorance|n.|*无知,愚昧;不知,不了解;愚昧行为|B|ignorance of 对…的无知
-checkout|n.|*结账台,收银台;结账;检验;签出|at the checkout 在收银台
+checkout|n.|*结账台,收银台;结账;检验;签出|A|at the checkout 在收银台
 distant|adj.|*遥远的;久远的;冷淡的;远亲的;恍惚的|A|distant future 遥远的未来
 beach|n./v.|*海滩,沙滩;湖滨;上岸;搁浅;把…拖上岸|A|on the beach 在海滩上
 tax|n./v.|*税,税款;负担;向…征税;责备;使负重担|A|tax rate 税率
@@ -31,14 +31,14 @@ adult|n./adj.|*成年人;成年动物;成年的;成熟的;老成的|A|adult educ
 campus|n.|*校园,校区;大学;校园生活;分校;大学校园|A|on campus 在校内
 semester|n.|*学期,半学年;半年;一学期|B|spring semester 春季学期
 memory|n.|*记忆力;回忆,记忆;记忆中的人或事;存储;存储器;纪念|A|in memory of 纪念
-brain|n.|*脑,大脑;智力;头脑;脑力;聪明的人;智者;脑髓|A|brain power 脑力
+brain|n.|*脑,大脑;智力,头脑;脑力;聪明的人|A|brain power 脑力
 patience|n.|*耐心,忍耐力;忍耐;毅力;容忍;耐心行为|A|patience with 对…的耐心
 interrupt|v.|*打断,打扰;中断;阻碍;插嘴;打扰;使暂停;阻断|B|interrupt a conversation 打断谈话
 business|n.|*生意,商业;事务,业务;公司,企业;职责;行业;营业额|A|business trip 出差
 tired|adj.|*疲劳的,疲倦的;厌倦的;陈旧的;破旧的;厌烦的|A|be tired of 厌倦
 convenient|adj.|*方便的,便利的;近便的;合适的;省事的|A|be convenient for 对…方便
-commute|v./n.|*通勤,上下班往返;通勤路程;减刑;交换;通勤路程|C|daily commute 日常通勤
-commuter|n./adj.|*通勤者,上下班往返的人;通勤的;市郊定期车票|commuter train 通勤列车
+commute|v./n.|*通勤,上下班往返;通勤路程;减刑;交换|C|daily commute 日常通勤
+commuter|n./adj.|*通勤者,上下班往返的人;通勤的;市郊定期车票|B|commuter train 通勤列车
 neighbourhood|n.|*街区,城区;附近;邻里;邻近地区;街坊;社区关系|A|in the neighbourhood 在附近
 dramatically|adv.|*显著地;戏剧性地;引人注目地;剧烈地|B|increase dramatically 急剧增长
 consistent|adj.|*一致的,始终如一的;连续的;相符的;坚持的;稳固的|B|be consistent with 与…一致
@@ -52,7 +52,7 @@ environmentally|adv.|*环保地,有关环境地;在环境方面|B|environmentall
 increasingly|adv.|*越来越多地,日益;逐渐增加地;愈发|A|increasingly popular 越来越流行
 accidentally|adv.|*意外地,偶然地;不小心地;非故意地|B|accidentally find 偶然发现
 properly|adv.|*正确地,适当地;恰当地;完全地;严格地;体面地|A|properly handle 妥善处理
-barely|adv.|*几乎不,勉强;仅仅;刚刚;几乎没有;赤裸裸地|barely enough 勉强够
+barely|adv.|*几乎不,勉强;仅仅;刚刚;几乎没有;赤裸裸地|B|barely enough 勉强够
 rarely|adv.|*很少,难得;不常;异乎寻常地;极好地|A|rarely happen 很少发生
 highly|adv.|*非常,高度;很;赞许地;高价地;钦佩地;极为|A|highly likely 极有可能
 entirely|adv.|*完全地,彻底地;全部地;完整地;全然|A|entirely different 完全不同

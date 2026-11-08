@@ -1,0 +1,22 @@
+# 手工补充/覆盖的音标
+#
+# 文件名以 zz_ 开头是有意的：core/phonetics.py 按文件名字典序加载，
+# 后加载的覆盖先加载的，所以必须排在 en_US.txt 后面才生效。
+#
+# 什么时候要写这个文件：
+#   1. 上游表没有的词（英式拼写 analyse / emphasise 在美音表里就没有）
+#   2. 你觉得上游给得不对、想改读音的词
+# 放在这里而不是直接改 en_US.txt，是因为 en_US.txt 会被
+# .tools/fetch_phonetics.py 整份重写，手改的内容会丢。
+#
+# 格式同上：单词|音标（音标不带外层斜杠）
+
+analyse|ˈænəlaɪz
+emphasise|ˈɛmfəsaɪz
+up-to-date|ˌʌp təˈdeɪt
+vend|vend
+second-hand|ˌsekəndˈhænd
+organise|ˈɔːrɡənaɪz
+# 15 册补进来之后新缺的两个：都是英式拼写，美音表里没有
+favourable|ˈfeɪvərəbl
+organiser|ˈɔːrɡənaɪzər
