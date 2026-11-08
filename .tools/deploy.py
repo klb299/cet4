@@ -118,10 +118,16 @@ def main():
     remote = "https://x-access-token:%s@github.com/%s/%s.git" % (token, owner, args.repo)
 
     # 3) 把远端历史接过来
+    #    不用 --depth=1：仓库第一次部署时已经被浅克隆过，再叠一次浅拉
+    #    会因为 .git/shallow 与本地已有历史打架而失败，失败后脚本会误判成
+    #    "远端是空的"，直接推本地 HEAD —— 于是被 GitHub 以 non-fast-forward 拒绝。
+    #    仓库才 2.6MB，完整拉一次没有负担。
     print("拉取远端 %s 的历史 …" % branch)
-    fetch = sh(["git", "fetch", "--depth=1", remote, branch], check=False)
-    has_remote = fetch.returncode == 0 and sh(
-        ["git", "rev-parse", "--verify", "FETCH_HEAD"], check=False).returncode == 0
+    fetch = sh(["git", "fetch", remote, branch], check=False)
+    has_remote = (fetch.returncode == 0 and sh(
+        ["git", "rev-parse", "--verify", "FETCH_HEAD"], check=False).returncode == 0)
+    if not has_remote:
+        print("  （拉取失败，按空仓库处理）%s" % (fetch.stderr or "").strip()[:200])
 
     tree = sh(["git", "write-tree"]).stdout.strip()
     name = sh(["git", "config", "user.name"], check=False).stdout.strip() or "deploy"
@@ -150,7 +156,16 @@ def main():
     print("推送 …")
     push = sh(["git", "push", remote, "%s:refs/heads/%s" % (commit, branch)], check=False)
     if push.returncode != 0:
-        print("推送失败：\n%s%s" % (push.stdout, push.stderr))
+        err = (push.stdout + push.stderr).strip()
+        print("推送失败：\n%s" % err)
+        low = err.lower()
+        if "connect tunnel failed" in low or "could not connect" in low or "502" in low:
+            print("\n这通常是网络问题：git 走的是 github.com:443，被代理挡住了；"
+                  "\n而 api.github.com 往往是通的。换 API 通道即可："
+                  "\n  python .tools/push_api.py --token <你的token>")
+        elif "non-fast-forward" in low:
+            print("\n远端有你本地没有的提交。先 git fetch 看看差异，"
+                  "或者直接用 python .tools/push_api.py（它会把新提交接在远端 HEAD 后面）。")
         return 1
     print("推送完成。")
 

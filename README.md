@@ -672,6 +672,23 @@ python .tools/deploy.py --token ghp_你复制的token
 - 打开 GitHub Pages，把发布源校正为默认分支的根目录
 - 打印网址
 
+### 如果 `git push` 被代理挡住
+
+这台机器（以及不少国内环境）只能访问 `api.github.com`，访问 `github.com:443` 会被代理
+直接回 502，`git push` 因此永远失败。此时走 API 通道：
+
+```bash
+python .tools/push_api.py --token ghp_xxx            # 只传变化的文件
+python .tools/push_api.py --token ghp_xxx --dry      # 先看会传哪些
+```
+
+它用 Git Data API 手工搬一次：blob → tree → commit → 更新 ref。
+和 git 推送的区别只有一个——走 `api.github.com` 而不是 `github.com`。
+**历史仍然是连续的**：新提交的 parent 指向远端当前 HEAD，推完 `git log` 接得上。
+实测 4MB 的文件上传只要 3 秒（代理对上传不限速，只有下载被卡）。
+
+`deploy.py` 检测到这类网络错误时会直接提示改用这条通道。
+
 只想先看看会发生什么（不推送）：
 
 ```bash
