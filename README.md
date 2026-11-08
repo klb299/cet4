@@ -581,7 +581,7 @@ python .tools/fetch_phonetics.py en_GB     # 换英式音标
 
 ```bash
 python run.py --no-open        # 构建全部产物（含根目录入口页）
-python tests/run_all.py        # 数据门禁 11 + 主回归 127 + 边界 72，共 210 条
+python tests/run_all.py        # 数据门禁 11 + 主回归 130 + 边界 72，共 213 条
 python tests/audit_data.py     # 只跑数据门禁（纯 Python，秒级，不需要浏览器）
 python tests/test_all.py       # 只跑主回归
 python tests/test_edge.py      # 只跑边界回归

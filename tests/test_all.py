@@ -368,6 +368,18 @@ try:
     ck("再点一次「今日 30」能关掉", n(b, "document.querySelectorAll('#list .card').length") > 30,
        n(b, "document.querySelectorAll('#list .card').length"))
 
+    # 首屏只有 60 个词，那时候「已掌握 x / 总数」和「约 N 天走完」都不能用 cards.length，
+    # 否则会显示成 /60、约 2 天——曾经真的这样显示过。
+    b.ev("(function(){window.__keep=cards.splice(60);DATA.allReady=false;render();})()")
+    ck("首屏阶段进度分母用全量总数，而不是已加载的 60 个",
+       "/1635" in (b.ev("document.getElementById('prog').textContent") or ""),
+       b.ev("document.getElementById('prog').textContent"))
+    ck("首屏阶段引导语按全量算天数",
+       "/60" not in (b.ev("document.getElementById('prog').textContent") or ""))
+    b.ev("(function(){cards.push.apply(cards,window.__keep);DATA.allReady=true;render();})()")
+    ck("恢复全量后进度正常",
+       "/1635" in (b.ev("document.getElementById('prog').textContent") or ""))
+
     print("\n-- M. 覆盖率 / 易混词 / 篇章难度 --")
     # 覆盖率回答的是"这 1550 个词够不够用"。用实词口径：the/a/of 撑起来的比例没有意义
     ck("统计条里有实词覆盖率且 > 80%",

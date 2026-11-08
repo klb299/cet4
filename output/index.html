@@ -1384,7 +1384,7 @@ function render(){
      有进度之后这句自动消失，不打扰老用户。 */
   const fresh = !known.size && !Object.keys(srs).length && page === 1 && !todayMode;
   const hint = fresh ? `<div class="startHint">第一次用？点上面的 <b>今日 30</b>：
-      每天 30 个词，约 ${Math.ceil(cards.length / GOAL)} 天走完。下面就是排好的顺序。</div>` : '';
+      每天 30 个词，约 ${Math.ceil(stats.wordCount / GOAL)} 天走完。下面就是排好的顺序。</div>` : '';
   /* 断签回来：比"接着学新词"更要紧的是把到期的那批清掉，否则欠账会越滚越大 */
   const back = !fresh && gapDays >= 3 && due > 0 && page === 1 && !todayMode && !onlyDue;
   const backHint = back ? `<div class="startHint warn">上次学习是 <b>${gapDays}</b> 天前。
@@ -1411,7 +1411,7 @@ function render(){
      "明天 n" 是提前量——今天看到明天要复习 40 个，就不会等到明天再慌。 */
   document.getElementById('prog').innerHTML =
     `今日 <b>${todayRec.n}</b>/${GOAL} · 连续 <b>${streak.n || 0}</b> 天`
-    + ` · 明天 <b>${dueTomorrow()}</b> · 已掌握 <b>${known.size}</b>/${cards.length}`;
+    + ` · 明天 <b>${dueTomorrow()}</b> · 已掌握 <b>${known.size}</b>/${stats.wordCount}`;
   document.getElementById('todayChip').textContent =
     '今日 ' + GOAL + (todayRec.n >= GOAL ? ' ✓' : '');
   document.getElementById('todayChip').classList.toggle('on', todayMode);

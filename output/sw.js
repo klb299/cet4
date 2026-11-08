@@ -2,7 +2,7 @@
    策略：
    · 导航请求网络优先 —— 重新构建后打开就是新版，断网才用缓存；
    · 其它同源 GET 缓存优先 —— 单文件页面本来就没有外部依赖。 */
-const CACHE = 'cet4-202611081809';
+const CACHE = 'cet4-202611081819';
 const CORE = ['./index.html', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', e => {
