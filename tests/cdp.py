@@ -125,7 +125,18 @@ class Browser:
             r = self.send("Page.addScriptToEvaluateOnNewDocument", {"source": pre})
             pid = r.get("identifier")
         self.send("Page.navigate", {"url": url})
-        time.sleep(2.5)
+        # 等页面真正加载完，而不是固定 sleep 2.5 秒：
+        # 学习页的数据是分两批流式下发的，固定的等待时间既可能不够（首屏 60 词之后
+        # 还有 1500 多个词要 push）又拖慢每条用例。readyState === 'complete'
+        # 意味着所有 <script> 都执行完了，此时 cards / PASSES 才是全量。
+        for _ in range(60):
+            time.sleep(0.25)
+            try:
+                if self.ev("document.readyState") == "complete":
+                    break
+            except Exception:
+                pass
+        time.sleep(0.4)
         self.ev("1")
         if pre and pid:
             try:

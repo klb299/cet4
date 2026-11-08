@@ -87,13 +87,44 @@ def _pos_pool(cards):
 def build_html(cards, blocks, out_path, passages=None, stopwords=(), coverage=None):
     payload = [c.as_dict() for c in cards]
     stats = _stats(cards, blocks, coverage)
-    data_json = json.dumps({"cards": payload, "stats": stats,
-                            "posPool": _pos_pool(cards),
-                            # 今日计划的补位要跳过纯功能词：按频次排序，
-                            # 榜首全是 be / has / have / not 这类，占掉名额没用
-                            "stop": sorted(stopwords or ()),
-                            "passages": passages or []},
-                           ensure_ascii=False).replace("</", "<\\/")
+
+    # 数据分两段下发，让浏览器边下载边渲染。
+    #
+    # 为什么要拆：整页 4MB 时，手机在 30KB/s 的链路上要等 40 秒才看见第一屏
+    # （GitHub Pages 在国内大致就是这个速度）。而实际首屏只需要十几张卡。
+    # 浏览器解析 HTML 是流式的：把「前 200 个词」放在主脚本之前，
+    # 主脚本执行完就能先渲染出一屏；剩下 1400 多个词作为后续 <script> 继续 push，
+    # 下载完再补一次渲染。同样 4MB，用户 5~8 秒就能开始背第一个词。
+    #
+    # 不拆成独立 .js 文件是为了保住"双击 index.html 就能用"——file:// 下 fetch 会被拦，
+    # 但同文档里的 <script> 一直是可执行的。
+    FIRST = 60           # 首屏先给多少词：移动端一屏 15 张、桌面 40 张，60 个够撑住
+    STEP = 260           # 之后每段多少词
+
+    def seg(items, target, size):
+        """把 items 切成若干段 push 语句，每段之间浏览器可以继续解析。"""
+        out = []
+        for i in range(0, len(items), size):
+            body = ",".join(json.dumps(x, ensure_ascii=False, sort_keys=True)
+                            for x in items[i:i + size])
+            out.append("%s.push(%s);" % (target, body))
+        return out
+
+    head = {"cards": [], "stats": stats, "posPool": _pos_pool(cards),
+            # 今日计划的补位要跳过纯功能词：按频次排序，
+            # 榜首全是 be / has / have / not 这类，占掉名额没用
+            "stop": sorted(stopwords or ()), "passages": []}
+    data_head = json.dumps(head, ensure_ascii=False).replace("</", "<\\/")
+
+    first = seg(payload[:FIRST], "DATA.cards", FIRST)
+    rest = seg(payload[FIRST:], "DATA.cards", STEP)
+    rest += seg(passages or [], "DATA.passages", 20)
+    # 顺序要紧：先补索引、把 allReady 置上，再渲染。
+    # 反过来（先 render 后 reindex）的话，「难词 (N)」会按首屏那 60 个词算，
+    # 全量到齐后也不会更新，按钮上永远缺个数。
+    rest.append("reindexCards(); DATA.allReady = true; render(); initPassagePicker();")
+    data_first = "\n".join(first).replace("</", "<\\/")
+    data_rest = "\n".join(rest).replace("</", "<\\/")
 
     tpl = r"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -856,13 +887,27 @@ body.rshow-t .rtr{display:block}
   <button class="btn" id="mReset" title="清空学习记录（三档自评 + 复习计划）">重置</button>
 </div></div>
 
+<!-- 首屏数据：前 200 个词单独一段，主脚本执行完就能出第一屏 -->
 <script>
-const DATA = __DATA__;
+const DATA = __DATA_HEAD__;
+</script>
+<script>
+__DATA_FIRST__
+</script>
+
+<script>
 const cards = DATA.cards, stats = DATA.stats, POSPOOL = DATA.posPool || {};
 const STOP = new Set(DATA.stop || []);
 /* 卡面出现的词。srs 里可能留着已经被 --levels / --min-count 筛掉的词，
-   计数前先过一次这个集合，否则「难词 (3)」点进去只有 2 张卡。 */
-const CARDW = new Set(cards.map(c => c.word));
+   计数前先过一次这个集合，否则「难词 (3)」点进去只有 2 张卡。
+   数据是分两批下发的：首屏只有前 200 词，后 1400 多个词到齐后要重建一次，
+   否则难词计数会少一大截。 */
+const CARDW = new Set();
+function reindexCards(){
+  CARDW.clear();
+  for(const c of cards) CARDW.add(c.word);
+}
+reindexCards();
 const KEY = 'cet4_mastered_v1', HKEY = 'cet4_search_hist_v1', FKEY = 'cet4_fav_v1';
 /* localStorage 是用户可随意改的，浏览器扩展和旧版本也可能往里写过别的东西。
    之前只有 hist 包了 try，known / fav 是裸 JSON.parse —— 一旦里面存的不是合法
@@ -1478,7 +1523,11 @@ function render(){
   const hasMore = list.length > show.length;
   document.getElementById('more').style.display = hasMore?'block':'none';
   document.getElementById('mMore').style.display = hasMore?'inline-block':'none';
-  document.getElementById('tip').innerHTML = `共 ${list.length} 个单词`
+  /* 数据分两批到：首屏 60 词先渲染，其余流式补进来。
+     没到齐之前别谎报"共 60 个单词"——那会让人以为词库就这么点。 */
+  document.getElementById('tip').innerHTML = (DATA.allReady
+      ? `共 ${list.length} 个单词`
+      : `词库加载中 ${cards.length} / ${stats.wordCount}…`)
     + ' <span class="kbd">· 点单词或 🔊 朗读 · / 聚焦搜索 · Alt+S 朗读第一个 · Alt+D 今日复习 · Alt+R 切换正反 · Alt+F 只看收藏 · Alt+1 语速</span>';
   /* 今日进度取代原来那句「已掌握 0 / 1550」：总数不变，但每天看得见自己走了多少。
      "明天 n" 是提前量——今天看到明天要复习 40 个，就不会等到明天再慌。 */
@@ -1754,7 +1803,9 @@ function initPassagePicker(){
     return `<option value="${i}">${tag}${esc(p.y)} ${esc(p.s)} · ${esc(p.sec)} · ${esc(p.t)}`
       + `（生词 ${passLoad(p).unk}）</option>`;
   }).join('');
-  sel.addEventListener('change', () => { rIdx = +sel.value; renderPassage(); });
+  // 用 onchange 而不是 addEventListener：数据分两批到，首屏会先建一次空选单，
+  // 全量后再建一次；addEventListener 会叠加两个监听，选一篇触发两遍 renderPassage。
+  sel.onchange = () => { rIdx = +sel.value; renderPassage(); };
 }
 function renderPassage(){
   if(rIdx < 0 || rIdx >= PASSES.length) rIdx = 0;
@@ -2122,9 +2173,16 @@ window.addEventListener('resize',()=>{
   }, 200);
 });
 </script>
+
+<!-- 剩余词条与精读原文：继续流式 push，下完再补一次渲染 -->
+<script>
+__DATA_REST__
+</script>
 </body>
 </html>"""
-    html = tpl.replace("__DATA__", data_json)
+    html = (tpl.replace("__DATA_HEAD__", data_head)
+               .replace("__DATA_FIRST__", data_first)
+               .replace("__DATA_REST__", data_rest))
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
     return out_path
