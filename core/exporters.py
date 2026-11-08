@@ -117,10 +117,12 @@ def build_html(cards, blocks, out_path, passages=None, stopwords=(), coverage=No
     data_head = json.dumps(head, ensure_ascii=False).replace("</", "<\\/")
 
     first = seg(payload[:FIRST], "DATA.cards", FIRST)
-    # 正文只有 240KB 左右，紧跟首屏后面发，不用等 1500 多个词下完 ——
-    # 否则用户点「精读」时要干等半分钟，看到的是一片空白。
-    rest = seg(passages or [], "DATA.passages", 20)
-    rest += seg(payload[FIRST:], "DATA.cards", STEP)
+    # 正文单独成一个 <script>：浏览器要整块下载完才执行，
+    # 和 3.8MB 的词卡挤在一起的话，用户点「精读」得干等到最后（实测 58 秒）。
+    # 单独发之后，240KB 下完就能建选单、画出第一篇。
+    pass_js = seg(passages or [], "DATA.passages", 20)
+    pass_js.append("initPassagePicker(); if (view === 'read') renderPassage();")
+    rest = seg(payload[FIRST:], "DATA.cards", STEP)
     # 顺序要紧：先补索引、把 allReady 置上，再渲染。
     # 反过来（先 render 后 reindex）的话，「难词 (N)」会按首屏那 60 个词算，
     # 全量到齐后也不会更新，按钮上永远缺个数。
@@ -130,6 +132,7 @@ def build_html(cards, blocks, out_path, passages=None, stopwords=(), coverage=No
                 " for (const c of cards) PH[c.word] = c.phonetic;"
                 " DATA.allReady = true; render(); initPassagePicker();"
                 " if (view === 'read') renderPassage();")
+    data_pass = "\n".join(pass_js).replace("</", "<\\/")
     data_first = "\n".join(first).replace("</", "<\\/")
     data_rest = "\n".join(rest).replace("</", "<\\/")
 
@@ -2228,7 +2231,14 @@ window.addEventListener('resize',()=>{
 });
 </script>
 
-<!-- 剩余词条与精读原文：继续流式 push，下完再补一次渲染 -->
+<!-- 精读原文单独一段脚本：240KB，比 3.8MB 的词卡先到、也先执行。
+     浏览器要等整个 <script> 下载完才执行它，所以正文不能和词卡挤在同一块里 ——
+     挤在一起时，用户点「精读」得等到全部词卡下完才有内容（实测 58 秒）。 -->
+<script>
+__DATA_PASS__
+</script>
+
+<!-- 剩余词条：继续流式 push，下完再补一次渲染 -->
 <script>
 __DATA_REST__
 </script>
@@ -2236,6 +2246,7 @@ __DATA_REST__
 </html>"""
     html = (tpl.replace("__DATA_HEAD__", data_head)
                .replace("__DATA_FIRST__", data_first)
+               .replace("__DATA_PASS__", data_pass)
                .replace("__DATA_REST__", data_rest))
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
