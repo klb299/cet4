@@ -590,6 +590,29 @@ python .tools/shots.py         # 重新出预览图
 python .tools/reconcile_outline.py   # 词库 × 大纲对账，写 output/词库对账报告.md
 ```
 
+### 为什么 4MB 的页面在手机上 1 秒就能打开
+
+整页 4MB（1635 个词的全部例句内联在一个文件里）。在国内访问 GitHub Pages 实测只有
+约 28KB/s，整份下完要三十多秒，直接白屏。
+
+所以构建时把数据切成多段 `<script>`，利用浏览器对 HTML 的**流式解析**：
+
+```html
+<script>const DATA = {cards: []}</script>
+<script>DATA.cards.push(前 60 个词)</script>
+<script>…主脚本，末尾 render()…</script>     ← 到这一步首屏就出来了
+<script>DATA.cards.push(其余 1575 个词); reindexCards(); render()</script>
+```
+
+- 前 60 个词（约 40KB gzip）下完就能渲染 —— 移动端一屏 15 张、桌面 40 张，够用
+- 剩下 1500 多个词继续流式推入，33 秒后到齐，再补一次渲染
+- 到齐之前列表底部显示「词库加载中 60/1635…」，不谎报「共 60 个单词」
+- 没有拆成独立 `.js` 文件：`file://` 下 `fetch` 会被 CORS 拦，但同文档里的
+  `<script>` 一直可执行，所以双击打开的老用法不受影响
+
+实测（真实网络，28KB/s）：**首屏 1.2 秒**（原来 36 秒），全量 33.7 秒（后台完成，不挡操作）。
+之后 Service Worker 接管，再打开是秒开、断网也能用。
+
 **数据门禁**是提交前最划算的一步：不启浏览器，几秒内查完词库格式、音标覆盖率、
 实词覆盖率、**大纲内未收录词数量**、有没有屈折形式独立成条、同族词与易混词的覆盖面。
 它守的正是这次踩过的坑——`basic / complete / finish` 这类词漏了半年没人发现，

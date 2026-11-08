@@ -1521,7 +1521,13 @@ function render(){
   document.getElementById('list').innerHTML =
     show.length ? hint + backHint + show.map(cardHTML).join('') : emptyHTML();
   const hasMore = list.length > show.length;
-  document.getElementById('more').style.display = hasMore?'block':'none';
+  /* 首屏只有 60 个词，看完这 15 张时剩下的还在路上。
+     这时候「加载更多」不该消失——那会让人以为词库就这么点；
+     改成显示加载进度，点它也不会白点（wantMore 里已挡住）。 */
+  const moreBtn = document.getElementById('more');
+  moreBtn.textContent = DATA.allReady ? '加载更多'
+    : `词库加载中 ${cards.length}/${stats.wordCount}…`;
+  moreBtn.style.display = (hasMore || !DATA.allReady) ? 'block' : 'none';
   document.getElementById('mMore').style.display = hasMore?'inline-block':'none';
   /* 数据分两批到：首屏 60 词先渲染，其余流式补进来。
      没到齐之前别谎报"共 60 个单词"——那会让人以为词库就这么点。 */
@@ -1556,7 +1562,13 @@ function render(){
     if(first) first.focus();
   }
 }
-const wantMore = () => { page++; render(); };
+/* 数据没到齐时点「加载更多」没有意义（后面没有更多可给），
+   直接返回，别让页码白白 +1 —— 否则全量到齐后会凭空多翻一页。 */
+const wantMore = () => {
+  if(!DATA.allReady) return;
+  page++;
+  render();
+};
 
 /* ---------- 做题：真题句子挖空选词 ---------- */
 const POS1 = /^(n|v|adj|adv|pron|prep|conj|num|art|int|aux)\./;
