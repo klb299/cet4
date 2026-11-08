@@ -15,7 +15,7 @@
 命中 5877 / 6088 个词次）；算上功能词是 64.6%（6656 / 10309）。
 换句话说：把这些词背完，正文里每 20 个需要认识的词，还有 1 个没见过。
 
-**在线版**：https://klb299.github.io/cet4-word-miner/
+**在线版**：https://klb299.github.io/cet4/
 （手机浏览器打开后可用「添加到主屏幕」，像 App 一样用）
 
 ---
@@ -23,7 +23,7 @@
 ## 一、三分钟上手
 
 ```bash
-cd cet4-word-miner
+cd cet4-word-miner          # 本地目录名，与仓库名无关
 python run.py                 # 构建全部输出，并自动打开学习网页
 ```
 
@@ -700,7 +700,7 @@ python .tools/deploy.py --token ghp_xxx --dry
 等 1~3 分钟，Pages 构建完成后打开：
 
 ```
-https://<你的用户名>.github.io/cet4-word-miner/
+https://<你的用户名>.github.io/cet4/
 ```
 
 - Android Chrome / iOS Safari：分享 → **添加到主屏幕**，之后像 App 一样全屏打开

@@ -157,6 +157,10 @@ body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;
 .wrap{max-width:940px;margin:0 auto;padding:0 20px 80px}
 header{background:var(--panel);border-bottom:1px solid var(--line);padding:26px 0 20px;margin-bottom:18px}
 header .wrap{padding-bottom:0}
+/* 底部那几十像素是留给固定操作条（.mbar）的，只有"会滚到底"的内容区需要。
+   筛选区 .bar 是贴在顶部的 sticky 小块，它吃完这 80~96px 后，
+   就在筛选行和第一张卡之间撑出一条空白——手机上实测 105px，占掉 1/8 屏。 */
+.bar .wrap{padding-bottom:0}
 h1{margin:0 0 6px;font-size:22px;letter-spacing:.3px}
 .sub{color:var(--ink2);font-size:13px}
 .stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}

@@ -86,7 +86,7 @@ def local_tree():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--token", default=os.environ.get("GITHUB_TOKEN", ""))
-    ap.add_argument("--repo", default="cet4-word-miner")
+    ap.add_argument("--repo", default="cet4")
     ap.add_argument("--branch", default="main")
     ap.add_argument("--message", default="")
     ap.add_argument("--dry", action="store_true")

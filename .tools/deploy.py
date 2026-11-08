@@ -3,7 +3,7 @@
 
 用法：
     python .tools/deploy.py --token ghp_xxx
-    python .tools/deploy.py --token ghp_xxx --repo cet4-word-miner --branch main
+    python .tools/deploy.py --token ghp_xxx --repo cet4 --branch main
     GITHUB_TOKEN=ghp_xxx python .tools/deploy.py          # 从环境变量读
     python .tools/deploy.py --token ghp_xxx --dry         # 只检查，不推送
 
@@ -31,7 +31,7 @@ import urllib.request
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 API = "https://api.github.com"
-DEFAULT_REPO = "cet4-word-miner"
+DEFAULT_REPO = "cet4"
 
 
 def sh(args, cwd=BASE, check=True, quiet=False):
