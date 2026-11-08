@@ -428,6 +428,22 @@ try:
     ck("选单里标了每篇的生词数",
        b.ev("document.querySelectorAll('#passage option')[1].textContent").find("生词") > 0,
        b.ev("document.querySelectorAll('#passage option')[1].textContent"))
+    # 正文比首屏词卡到得晚（排在词卡之后）。用户一进来就点精读时 PASSES 还是空的，
+    # 以前直接取 PASSES[0].sents 抛异常，整个面板停在空白，看起来就像功能坏了。
+    # 这里把正文临时抽空，模拟"还没下发"的那一刻。
+    err0 = len(b.ev("window.__errs||[]"))
+    b.ev("window.__saved = PASSES.splice(0, PASSES.length); renderPassage();")
+    ck("正文没到时精读给出加载提示，而不是空白",
+       "正在加载" in (b.ev("document.getElementById('rSrc').textContent") or ""),
+       b.ev("document.getElementById('rSrc').textContent"))
+    ck("正文没到时也不抛异常",
+       len(b.ev("window.__errs||[]")) == err0,
+       b.ev("JSON.stringify(window.__errs||[])"))
+    b.ev("PASSES.push.apply(PASSES, window.__saved); initPassagePicker(); renderPassage();")
+    ck("正文到齐后自动恢复成正常篇目",
+       n(b, "document.querySelectorAll('#passage option').length") == 83
+       and len(b.ev("document.getElementById('rText').textContent") or "") > 300,
+       n(b, "document.querySelectorAll('#passage option').length"))
     # 推荐必须往前走，不能在两篇之间来回弹
     b.ev("document.getElementById('rNext').click()")
     p1 = b.ev("rIdx")

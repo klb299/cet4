@@ -117,12 +117,19 @@ def build_html(cards, blocks, out_path, passages=None, stopwords=(), coverage=No
     data_head = json.dumps(head, ensure_ascii=False).replace("</", "<\\/")
 
     first = seg(payload[:FIRST], "DATA.cards", FIRST)
-    rest = seg(payload[FIRST:], "DATA.cards", STEP)
-    rest += seg(passages or [], "DATA.passages", 20)
+    # 正文只有 240KB 左右，紧跟首屏后面发，不用等 1500 多个词下完 ——
+    # 否则用户点「精读」时要干等半分钟，看到的是一片空白。
+    rest = seg(passages or [], "DATA.passages", 20)
+    rest += seg(payload[FIRST:], "DATA.cards", STEP)
     # 顺序要紧：先补索引、把 allReady 置上，再渲染。
     # 反过来（先 render 后 reindex）的话，「难词 (N)」会按首屏那 60 个词算，
     # 全量到齐后也不会更新，按钮上永远缺个数。
-    rest.append("reindexCards(); DATA.allReady = true; render(); initPassagePicker();")
+    # PH 是音标表，主脚本执行时只有前 60 个词，这里必须整份重建；
+    # 如果用户已经停在精读页，还要重画一次正文（音标、词数才准）。
+    rest.append("reindexCards();"
+                " for (const c of cards) PH[c.word] = c.phonetic;"
+                " DATA.allReady = true; render(); initPassagePicker();"
+                " if (view === 'read') renderPassage();")
     data_first = "\n".join(first).replace("</", "<\\/")
     data_rest = "\n".join(rest).replace("</", "<\\/")
 
@@ -252,7 +259,8 @@ body.show-t .tr{display:block}
 /* 精读的难度行：一句话说清这篇现在读起来累不累 */
 .rdiff{font-size:12px;color:var(--ink2);margin:0 0 10px}
 .rdiff b{color:var(--ink)}
-.dl{border-radius:5px;padding:1px 6px;font-size:11px;font-weight:600}
+/* 难度标签是两三个字的小徽章，手机上被挤成「太 / 难」两行很难看 */
+.dl{border-radius:5px;padding:1px 6px;font-size:11px;font-weight:600;white-space:nowrap}
 .dl.easy{background:#eef2f6;color:#6b7280}
 .dl.good{background:#e8f6ec;color:#15803d}
 .dl.hard{background:#fff8ed;color:#92400e}
@@ -341,6 +349,9 @@ body.view-quiz .mbar .cardonly{display:none}
 body.view-read #readPanel{display:block}
 body.view-read #list,body.view-read #more{display:none!important}
 body.view-read .chipline{display:none}
+/* 年份/题型/排序只筛词卡，精读页留着它们纯占地（手机上白占 180px）。
+   搜索框保留——读文章时查生词是最常用的动作。 */
+body.view-read .selrow{display:none}
 body.view-read .mbar{display:none}
 /* 学习报告：独立一屏，不参与筛选，所以顶部搜索栏整条收起 */
 #reportPanel{display:none}
@@ -444,6 +455,8 @@ body.rshow-t .rtr{display:block}
   padding:14px 16px;margin-bottom:14px}
 .rptit{font-size:14px;font-weight:600;margin-bottom:12px}
 .rpsub{font-weight:400;font-size:12px;color:var(--ink3);margin-left:8px;display:inline-block}
+/* 正文还在流式下载时的占位：给人一句明确的等待理由，而不是一块空白 */
+.rload{font-size:13.5px;line-height:1.9;color:var(--ink3);padding:4px 0}
 .heat{display:grid;grid-template-columns:repeat(7,18px);gap:5px;justify-content:start}
 .hc{display:block;width:18px;height:18px;border-radius:3px;background:#eef0f3}
 .hc.l1{background:#c7ddfb}
@@ -615,7 +628,10 @@ body.rshow-t .rtr{display:block}
      否则 350px 的页头会把第一张词卡顶到固定底栏后面 */
   .srcsum{display:flex;align-items:center;min-height:44px}
   .srcnote:not(.open) .body{display:none}
-  .stats{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px}
+  /* 横滑但别露出滚动条：手机上那条灰杠比内容还显眼 */
+  .stats{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;
+         scrollbar-width:none;-ms-overflow-style:none}
+  .stats::-webkit-scrollbar{display:none}
   .stat{flex:0 0 auto}
   .rpnums{grid-template-columns:repeat(2,1fr)}
   .rpbars{height:118px}
@@ -1813,6 +1829,10 @@ function passLoad(p){
 
 function initPassagePicker(){
   const sel = document.getElementById('passage');
+  if(!PASSES.length){          /* 正文还没下发，先给个占位项，别留一个空下拉框 */
+    sel.innerHTML = '<option>正文加载中…</option>';
+    return;
+  }
   sel.innerHTML = PASSES.map((p,i) => {
     /* 选单里直接标出每篇还有多少生词，挑篇不用点进去试 */
     const tag = p.src && p.src !== 'real' ? `【${SRC_TXT[p.src] || p.src}】` : '';
@@ -1824,6 +1844,20 @@ function initPassagePicker(){
   sel.onchange = () => { rIdx = +sel.value; renderPassage(); };
 }
 function renderPassage(){
+  /* 数据是分段下发的，正文到得比首屏晚。这时候 PASSES 还是空的，
+     原来直接取 PASSES[0].sents 会抛异常，整个面板停在空白状态，
+     看起来就像「精读坏了」。给一句进度文案，数据到齐后自动重画。 */
+  if(!PASSES.length){
+    document.getElementById('rSrc').textContent = '真题正文正在加载…';
+    document.getElementById('rDiff').textContent = '';
+    document.getElementById('rTopic').innerHTML = '';
+    document.getElementById('rText').innerHTML =
+      `<div class="rload">已到 ${cards.length} 个词，正文马上就到（约 240KB）。`
+      + `这里的文章按「年份 卷别 题型」排序，全部来自真题原文。</div>`;
+    document.getElementById('rQs').innerHTML = '';
+    document.getElementById('rWords').innerHTML = '';
+    return;
+  }
   if(rIdx < 0 || rIdx >= PASSES.length) rIdx = 0;
   const p = PASSES[rIdx] || PASSES[0];
   document.getElementById('rSrc').innerHTML =
@@ -1857,6 +1891,10 @@ function renderPassage(){
                  title="${LVN[lv] || ''}">${esc(w)}${
          PH[w] ? `<span class="p">/${esc(PH[w])}/</span>` : ''}</span>`;
      }).join('') + `</div>`;
+  /* rIdx 也可能被「推荐下一篇」「跳词」改掉，不回头同步的话，
+     下拉框写的是一篇、正文显示的是另一篇。 */
+  const sel = document.getElementById('passage');
+  if(sel && sel.value !== String(rIdx)) sel.value = String(rIdx);
   applyReadTrans();
 }
 function applyReadTrans(){
