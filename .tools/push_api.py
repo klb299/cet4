@@ -140,8 +140,13 @@ def main():
     for i, p in enumerate(changed, 1):
         full = os.path.join(BASE, p)
         size = os.path.getsize(full)
-        with open(full, "rb") as f:
-            raw = f.read()
+        # 内容从 git 对象里取，而不是读工作区文件。
+        # Windows 上 core.autocrlf=true 会把仓库里的换行存成 LF，而构建产物
+        # 落在磁盘上是 CRLF。直接传工作区文件的话，远端 blob 的 sha 永远和
+        # 本地 commit 里的 sha 对不上 —— 于是每次推送都会把 4MB 的
+        # output/index.html 重新传一遍（哪怕只改了一个 .md）。
+        raw = subprocess.run(["git", "cat-file", "blob", local[p][1]],
+                             cwd=BASE, capture_output=True).stdout
         t0 = time.time()
         # 4MB 的文件经 base64 是 5.4MB，在这条 23KB/s 的链路上要三分多钟，
         # 用默认 180 秒会被判超时然后重传，越重越慢。大文件单独放宽到 15 分钟。
@@ -152,6 +157,9 @@ def main():
         if code not in (200, 201):
             print("上传失败 %s：%s %s" % (p, code, blob.get("message")))
             return 1
+        if blob.get("sha") != local[p][1]:
+            print("  提醒：%s 的远端 sha 与本地不一致（%s ≠ %s），下次可能重传"
+                  % (p, str(blob.get("sha"))[:8], local[p][1][:8]))
         mode = local[p][0]
         entries.append({"path": p, "mode": mode, "type": "blob", "sha": blob["sha"]})
         if size >= BIG or i % 10 == 0:
